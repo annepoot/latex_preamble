@@ -1,0 +1,154 @@
+% Operators
+\newcommand{\cov}[2]{\text{cov}\left(#1, #2\right)}
+\newcommand{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
+\newcommand{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
+\newcommand{\inner}[3][]{\langle #2, #3 \rangle_{#1}}
+\newcommand{\diffop}{\mathcal{D}}
+\newcommand{\idop}{\mathcal{I}}
+\newcommand{\sqrtdiffop}{\mathcal{S}}
+\newcommand{\linear}{\mathcal{L}}
+\newcommand{\veclinear}{\boldsymbol{\linear}}
+\newcommand{\information}{\mathcal{I}}
+\newcommand{\vecinformation}{\boldsymbol{\information}}
+\newcommand{\mapc}{\mathcal{F}_\text{c}}
+\newcommand{\mapf}{\mathcal{F}_\text{f}}
+
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\spn}{span}
+\DeclareMathOperator*{\rank}{rank}
+
+% Accents
+\newcommand{\boldtilde}[1]{\boldsymbol{\tilde{\text{$#1$}}}}
+\newcommand{\boldhat}[1]{\boldsymbol{\hat{\text{$#1$}}}}
+\newcommand{\boldstar}[1]{#1^*}
+
+% Greek symbols
+\newcommand{\matLambda}{{\boldsymbol \Lambda}}
+\newcommand{\matSigma}{{\boldsymbol \Sigma}}
+\newcommand{\matSigmam}{{\matSigma_m}}
+\newcommand{\matSigmanull}{{\matSigma_0}}
+\newcommand{\matSigmaf}{{\boldsymbol{\Sigma}_\mathbf{f}}}
+\newcommand{\matPhi}{{\boldsymbol \Phi}}
+\newcommand{\matPhim}{{\matPhi_m}}
+\newcommand{\vecepsilon}{{\boldsymbol \epsilon}}
+\newcommand{\vecvarepsilon}{{\boldsymbol \varepsilon}}
+\newcommand{\vecmu}{{\boldsymbol \mu}}
+\newcommand{\vecsigma}{{\boldsymbol \sigma}}
+\newcommand{\vecphi}{{\boldsymbol \phi}}
+\newcommand{\vecphim}{{\vecphi_m}}
+\newcommand{\vecpsi}{{\boldsymbol \psi}}
+
+% Latin symbols
+\newcommand{\matA}{{\mathbf A}}
+\newcommand{\matB}{{\mathbf B}}
+\newcommand{\matC}{{\mathbf C}}
+\newcommand{\matD}{{\mathbf D}}
+\newcommand{\matE}{{\mathbf E}}
+\newcommand{\matF}{{\mathbf F}}
+\newcommand{\matG}{{\mathbf G}}
+\newcommand{\matGf}{{\mathbf{G_f}}}
+\newcommand{\matH}{{\mathbf H}}
+\newcommand{\matI}{{\mathbf I}}
+\newcommand{\matJ}{{\mathbf J}}
+\newcommand{\matK}{{\mathbf K}}
+\newcommand{\matKc}{{\mathbf{K_c}}}
+\newcommand{\matKf}{{\mathbf{K_f}}}
+\newcommand{\matL}{{\mathbf L}}
+\newcommand{\matM}{{\mathbf M}}
+\newcommand{\matN}{{\mathbf N}}
+\newcommand{\matO}{{\mathbf O}}
+\newcommand{\matP}{{\mathbf P}}
+\newcommand{\matPm}{{\matP_m}}
+\newcommand{\matQ}{{\mathbf Q}}
+\newcommand{\matR}{{\mathbf R}}
+\newcommand{\matS}{{\mathbf S}}
+\newcommand{\matSm}{{\matS_m}}
+\newcommand{\matT}{{\mathbf T}}
+\newcommand{\matU}{{\mathbf U}}
+\newcommand{\matV}{{\mathbf V}}
+\newcommand{\matW}{{\mathbf W}}
+\newcommand{\matX}{{\mathbf X}}
+\newcommand{\matY}{{\mathbf Y}}
+\newcommand{\matZ}{{\mathbf Z}}
+\newcommand{\veca}{{\mathbf a}}
+\newcommand{\vecb}{{\mathbf b}}
+\newcommand{\vecc}{{\mathbf c}}
+\newcommand{\vecd}{{\mathbf d}}
+\newcommand{\vece}{{\mathbf e}}
+\newcommand{\vecf}{{\mathbf f}}
+\newcommand{\vecfc}{{\mathbf{f_c}}}
+\newcommand{\vecff}{{\mathbf{f_f}}}
+\newcommand{\vecg}{{\mathbf g}}
+\newcommand{\vech}{{\mathbf h}}
+\newcommand{\veci}{{\mathbf i}}
+\newcommand{\vecj}{{\mathbf j}}
+\newcommand{\veck}{{\mathbf k}}
+\newcommand{\vecl}{{\mathbf l}}
+\newcommand{\vecm}{{\mathbf m}}
+\newcommand{\vecmf}{{\mathbf{m_f}}}
+\newcommand{\vecn}{{\mathbf n}}
+\newcommand{\veco}{{\mathbf o}}
+\newcommand{\vecp}{{\mathbf p}}
+\newcommand{\vecq}{{\mathbf q}}
+\newcommand{\vecr}{{\mathbf r}}
+\newcommand{\vecs}{{\mathbf s}}
+\newcommand{\vecsm}{{\mathbf s_m}}
+\newcommand{\vect}{{\mathbf t}}
+\newcommand{\vecu}{{\mathbf u}}
+\newcommand{\vecum}{{\vecu_m}}
+\newcommand{\vecunull}{{\vecu_0}}
+\newcommand{\vecuc}{{\mathbf{u_c}}}
+\newcommand{\vecuf}{{\mathbf{u_f}}}
+\newcommand{\vecv}{{\mathbf v}}
+\newcommand{\vecw}{{\mathbf w}}
+\newcommand{\vecx}{{\mathbf x}}
+\newcommand{\vecxm}{{\vecx_m}}
+\newcommand{\vecxnull}{{\vecx_0}}
+\newcommand{\vecy}{{\mathbf y}}
+\newcommand{\vecz}{{\mathbf z}}
+\newcommand{\vecnull}{{\mathbf 0}}
+\newcommand{\vecone}{{\mathbf 1}}
+
+% Matrix transpose
+\newcommand{\T}{^{\top}}
+\newcommand{\adj}{^{\dagger}}
+\newcommand{\pseudoinv}{^+}
+\newcommand{\inv}{^{-1}}
+\newcommand{\Tinv}{^{-\top}}
+\newcommand{\adjinv}{^{-\dagger}}
+\newcommand{\Tpseudoinv}{^{+\top}}
+\newcommand{\adjpseudoinv}{^{+\dagger}}
+\newcommand{\invT}{\Tinv}
+\newcommand{\invadj}{\adjinv}
+\newcommand{\pseudoinvT}{\Tpseudoinv}
+\newcommand{\pseudoinvadj}{\adjpseudoinv}
+
+% Subscripts
+\newcommand{\subd}[1]{\ifblank{#1}{\mathbf{d}}{#1_\mathbf{d}}}
+\newcommand{\subi}[1]{\ifblank{#1}{\mathbf{i}}{#1_\mathbf{i}}}
+\newcommand{\subn}[1]{#1_\mathbf{n}}
+\newcommand{\subii}[1]{\ifblank{#1}{\mathbf{ii}}{#1_\mathbf{ii}}}
+\newcommand{\subid}[1]{#1_\mathbf{id}}
+\newcommand{\subdi}[1]{#1_\mathbf{di}}
+\newcommand{\subdd}[1]{#1_\mathbf{dd}}
+
+% Function spaces
+\newcommand{\spaceV}{\mathcal{V}}
+\newcommand{\spaceVh}{\mathcal{V}^h}
+\newcommand{\spaceWh}{\mathcal{W}^h}
+\newcommand{\spaceH}{H^1_0}
+\newcommand{\funcuh}{u^h}
+\newcommand{\funcvh}{v^h}
+\newcommand{\spaceR}{\mathbb{R}}
+\newcommand{\spaceRm}{\spaceR^m}
+\newcommand{\spaceRn}{\spaceR^n}
+\newcommand{\spaceL}{L^2(\Omega)}
+
+% Differential operators
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\dx}{\, \diff x}
+\newcommand{\vecdx}{\, \diff \vecx}
+\newcommand{\dz}{\, \diff z}
+\newcommand{\vecdz}{\, \diff \vecz}

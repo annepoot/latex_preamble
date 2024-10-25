@@ -1,3 +1,8 @@
+\usepackage{amsmath}        % provides \DeclareMathOperator and such
+\usepackage{bm}             % provides bold symbols for both latin and greek letters
+\usepackage{mathcommand}    % allows definition of commands that are different inside and outside maths environments
+\usepackage{xparse}         % provides string comparison
+
 % Operators
 \newcommand{\cov}[2]{\text{cov}\left(#1, #2\right)}
 \newcommand{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
@@ -24,131 +29,237 @@
 \newcommand{\boldhat}[1]{\boldsymbol{\hat{\text{$#1$}}}}
 \newcommand{\boldstar}[1]{#1^*}
 
-% Greek symbols
-\newcommand{\matLambda}{{\boldsymbol \Lambda}}
-\newcommand{\matSigma}{{\boldsymbol \Sigma}}
-\newcommand{\matSigmam}{{\matSigma_m}}
-\newcommand{\matSigmanull}{{\matSigma_0}}
-\newcommand{\matSigmaf}{{\boldsymbol{\Sigma}_\mathbf{f}}}
-\newcommand{\matPhi}{{\boldsymbol \Phi}}
-\newcommand{\matPhim}{{\matPhi_m}}
-\newcommand{\vecepsilon}{{\boldsymbol \epsilon}}
-\newcommand{\vecvarepsilon}{{\boldsymbol \varepsilon}}
-\newcommand{\vecmu}{{\boldsymbol \mu}}
-\newcommand{\vecsigma}{{\boldsymbol \sigma}}
-\newcommand{\vecphi}{{\boldsymbol \phi}}
-\newcommand{\vecphim}{{\vecphi_m}}
-\newcommand{\vecpsi}{{\boldsymbol \psi}}
+%%%%%%%%%%%
+% Vectors %
+%%%%%%%%%%%
 
-% Latin symbols
-\newcommand{\matA}{{\mathbf A}}
-\newcommand{\matB}{{\mathbf B}}
-\newcommand{\matC}{{\mathbf C}}
-\newcommand{\matD}{{\mathbf D}}
-\newcommand{\matE}{{\mathbf E}}
-\newcommand{\matF}{{\mathbf F}}
-\newcommand{\matG}{{\mathbf G}}
-\newcommand{\matGf}{{\mathbf{G_f}}}
-\newcommand{\matH}{{\mathbf H}}
-\newcommand{\matI}{{\mathbf I}}
-\newcommand{\matJ}{{\mathbf J}}
-\newcommand{\matK}{{\mathbf K}}
-\newcommand{\matKc}{{\mathbf{K_c}}}
-\newcommand{\matKf}{{\mathbf{K_f}}}
-\newcommand{\matL}{{\mathbf L}}
-\newcommand{\matM}{{\mathbf M}}
-\newcommand{\matN}{{\mathbf N}}
-\newcommand{\matO}{{\mathbf O}}
-\newcommand{\matP}{{\mathbf P}}
-\newcommand{\matPm}{{\matP_m}}
-\newcommand{\matQ}{{\mathbf Q}}
-\newcommand{\matR}{{\mathbf R}}
-\newcommand{\matS}{{\mathbf S}}
-\newcommand{\matSm}{{\matS_m}}
-\newcommand{\matT}{{\mathbf T}}
-\newcommand{\matU}{{\mathbf U}}
-\newcommand{\matV}{{\mathbf V}}
-\newcommand{\matW}{{\mathbf W}}
-\newcommand{\matX}{{\mathbf X}}
-\newcommand{\matY}{{\mathbf Y}}
-\newcommand{\matZ}{{\mathbf Z}}
-\newcommand{\veca}{{\mathbf a}}
-\newcommand{\vecb}{{\mathbf b}}
-\newcommand{\vecc}{{\mathbf c}}
-\newcommand{\vecd}{{\mathbf d}}
-\newcommand{\vece}{{\mathbf e}}
-\newcommand{\vecf}{{\mathbf f}}
-\newcommand{\vecfc}{{\mathbf{f_c}}}
-\newcommand{\vecff}{{\mathbf{f_f}}}
-\newcommand{\vecg}{{\mathbf g}}
-\newcommand{\vech}{{\mathbf h}}
-\newcommand{\veci}{{\mathbf i}}
-\newcommand{\vecj}{{\mathbf j}}
-\newcommand{\veck}{{\mathbf k}}
-\newcommand{\vecl}{{\mathbf l}}
-\newcommand{\vecm}{{\mathbf m}}
-\newcommand{\vecmf}{{\mathbf{m_f}}}
-\newcommand{\vecn}{{\mathbf n}}
-\newcommand{\veco}{{\mathbf o}}
-\newcommand{\vecp}{{\mathbf p}}
-\newcommand{\vecq}{{\mathbf q}}
-\newcommand{\vecr}{{\mathbf r}}
-\newcommand{\vecs}{{\mathbf s}}
-\newcommand{\vecsm}{{\mathbf s_m}}
-\newcommand{\vect}{{\mathbf t}}
-\newcommand{\vecu}{{\mathbf u}}
-\newcommand{\vecum}{{\vecu_m}}
-\newcommand{\vecunull}{{\vecu_0}}
-\newcommand{\vecuc}{{\mathbf{u_c}}}
-\newcommand{\vecuf}{{\mathbf{u_f}}}
-\newcommand{\vecv}{{\mathbf v}}
-\newcommand{\vecw}{{\mathbf w}}
-\newcommand{\vecx}{{\mathbf x}}
-\newcommand{\vecxm}{{\vecx_m}}
-\newcommand{\vecxnull}{{\vecx_0}}
-\newcommand{\vecy}{{\mathbf y}}
-\newcommand{\vecz}{{\mathbf z}}
-\newcommand{\vecnull}{{\mathbf 0}}
-\newcommand{\vecone}{{\mathbf 1}}
+\renewcommand*{\vec}[1]{{\bm{#1}}}
 
-% Matrix transpose
-\newcommand{\T}{^{\top}}
-\newcommand{\adj}{^{\dagger}}
-\newcommand{\pseudoinv}{^+}
-\newcommand{\inv}{^{-1}}
-\newcommand{\Tinv}{^{-\top}}
-\newcommand{\adjinv}{^{-\dagger}}
-\newcommand{\Tpseudoinv}{^{+\top}}
-\newcommand{\adjpseudoinv}{^{+\dagger}}
-\newcommand{\invT}{\Tinv}
-\newcommand{\invadj}{\adjinv}
-\newcommand{\pseudoinvT}{\Tpseudoinv}
-\newcommand{\pseudoinvadj}{\adjpseudoinv}
+\newcommand*{\va}{\vec{a}}
+\newcommand*{\vb}{\vec{b}}
+\newcommand*{\vc}{\vec{c}}
+\newcommand*{\vd}{\vec{d}}
+\newcommand*{\ve}{\vec{e}}
+\newcommand*{\vf}{\vec{f}}
+\newcommand*{\vg}{\vec{g}}
+\newcommand*{\vh}{\vec{h}}
+\newcommand*{\vi}{\vec{i}}
+\newcommand*{\vj}{\vec{j}}
+\newcommand*{\vk}{\vec{k}}
+\newcommand*{\vl}{\vec{l}}
+\newcommand*{\vm}{\vec{m}}
+\newcommand*{\vn}{\vec{n}}
+\newcommand*{\vo}{\vec{o}}
+\newcommand*{\vp}{\vec{p}}
+\newcommand*{\vq}{\vec{q}}
+\newcommand*{\vr}{\vec{r}}
+\newcommand*{\vs}{\vec{s}}
+\newcommand*{\vt}{\vec{t}}
+\newcommand*{\vu}{\vec{u}}
+\newcommand*{\vv}{\vec{v}}
+\newcommand*{\vw}{\vec{w}}
+\newcommand*{\vx}{\vec{x}}
+\newcommand*{\vy}{\vec{y}}
+\newcommand*{\vz}{\vec{z}}
 
-% Subscripts
-\newcommand{\subd}[1]{\ifblank{#1}{\mathbf{d}}{#1_\mathbf{d}}}
-\newcommand{\subi}[1]{\ifblank{#1}{\mathbf{i}}{#1_\mathbf{i}}}
-\newcommand{\subn}[1]{#1_\mathbf{n}}
-\newcommand{\subii}[1]{\ifblank{#1}{\mathbf{ii}}{#1_\mathbf{ii}}}
-\newcommand{\subid}[1]{#1_\mathbf{id}}
-\newcommand{\subdi}[1]{#1_\mathbf{di}}
-\newcommand{\subdd}[1]{#1_\mathbf{dd}}
+\newcommand*{\valpha}{\vec{\alpha}}
+\newcommand*{\vbeta}{\vec{\beta}}
+\newcommand*{\vgamma}{\vec{\gamma}}
+\newcommand*{\vdelta}{\vec{\delta}}
+\newcommand*{\vepsilon}{\vec{\epsilon}}
+\newcommand*{\vvarepsilon}{\vec{\varepsilon}}
+\newcommand*{\vzeta}{\vec{\zeta}}
+\newcommand*{\veta}{\vec{\eta}}
+\newcommand*{\vtheta}{\vec{\theta}}
+\newcommand*{\vvartheta}{\vec{\vartheta}}
+\newcommand*{\viota}{\vec{\iota}}
+\newcommand*{\vkappa}{\vec{\kappa}}
+\newcommand*{\vlambda}{\vec{\lambda}}
+\newcommand*{\vmu}{\vec{\mu}}
+\newcommand*{\vnu}{\vec{\nu}}
+\newcommand*{\vxi}{\vec{\xi}}
+\newcommand*{\vpi}{\vec{\pi}}
+\newcommand*{\vrho}{\vec{\rho}}
+\newcommand*{\vvarrho}{\vec{\varrho}}
+\newcommand*{\vsigma}{\vec{\sigma}}
+\newcommand*{\vtau}{\vec{\tau}}
+\newcommand*{\vupsilon}{\vec{\upsilon}}
+\newcommand*{\vphi}{\vec{\phi}}
+\newcommand*{\vvarphi}{\vec{\varphi}}
+\newcommand*{\vchi}{\vec{\chi}}
+\newcommand*{\vpsi}{\vec{\psi}}
+\newcommand*{\vomega}{\vec{\omega}}
 
-% Function spaces
-\newcommand{\spaceV}{\mathcal{V}}
-\newcommand{\spaceVh}{\mathcal{V}^h}
-\newcommand{\spaceWh}{\mathcal{W}^h}
-\newcommand{\spaceH}{H^1_0}
-\newcommand{\funcuh}{u^h}
-\newcommand{\funcvh}{v^h}
-\newcommand{\spaceR}{\mathbb{R}}
-\newcommand{\spaceRm}{\spaceR^m}
-\newcommand{\spaceRn}{\spaceR^n}
-\newcommand{\spaceL}{L^2(\Omega)}
+%%%%%%%%%%%%
+% Matrices %
+%%%%%%%%%%%%
+
+\newcommand*{\mat}[1]{{\bm{#1}}}
+
+\newcommand*{\mA}{\mat{A}}
+\newcommand*{\mB}{\mat{B}}
+\newcommand*{\mC}{\mat{C}}
+\newcommand*{\mD}{\mat{D}}
+\newcommand*{\mE}{\mat{E}}
+\newcommand*{\mF}{\mat{F}}
+\newcommand*{\mG}{\mat{G}}
+\newcommand*{\mH}{\mat{H}}
+\newcommand*{\mI}{\mat{I}}
+\newcommand*{\mJ}{\mat{J}}
+\newcommand*{\mK}{\mat{K}}
+\newcommand*{\mL}{\mat{L}}
+\newcommand*{\mM}{\mat{M}}
+\newcommand*{\mN}{\mat{N}}
+\newcommand*{\mO}{\mat{O}}
+\newcommand*{\mP}{\mat{P}}
+\newcommand*{\mQ}{\mat{Q}}
+\newcommand*{\mR}{\mat{R}}
+\newcommand*{\mS}{\mat{S}}
+\newcommand*{\mT}{\mat{T}}
+\newcommand*{\mU}{\mat{U}}
+\newcommand*{\mV}{\mat{V}}
+\newcommand*{\mW}{\mat{W}}
+\newcommand*{\mX}{\mat{X}}
+\newcommand*{\mY}{\mat{Y}}
+\newcommand*{\mZ}{\mat{Z}}
+
+\newcommand*{\mGamma}{\mat{\Gamma}}
+\newcommand*{\mDelta}{\mat{\Delta}}
+\newcommand*{\mTheta}{\mat{\Theta}}
+\newcommand*{\mLambda}{\mat{\Lambda}}
+\newcommand*{\mXi}{\mat{\Xi}}
+\newcommand*{\mPi}{\mat{\Pi}}
+\newcommand*{\mSigma}{\mat{\Sigma}}
+\newcommand*{\mUpsilon}{\mat{\Upsilon}}
+\newcommand*{\mPhi}{\mat{\Phi}}
+\newcommand*{\mPsi}{\mat{\Psi}}
+\newcommand*{\mOmega}{\mat{\Omega}}
+
+%%%%%%%%%%%%%
+% Operators %
+%%%%%%%%%%%%%
+
+\newcommand*{\op}[1]{{\mathcal{#1}}}
+
+\newcommand*{\opA}{\op{A}}
+\newcommand*{\opB}{\op{B}}
+\newcommand*{\opC}{\op{C}}
+\newcommand*{\opD}{\op{D}}
+\newcommand*{\opE}{\op{E}}
+\newcommand*{\opF}{\op{F}}
+\newcommand*{\opG}{\op{G}}
+\newcommand*{\opH}{\op{H}}
+\newcommand*{\opI}{\op{I}}
+\newcommand*{\opJ}{\op{J}}
+\newcommand*{\opK}{\op{K}}
+\newcommand*{\opL}{\op{L}}
+\newcommand*{\opM}{\op{M}}
+\newcommand*{\opN}{\op{N}}
+\newcommand*{\opO}{\op{O}}
+\newcommand*{\opP}{\op{P}}
+\newcommand*{\opQ}{\op{Q}}
+\newcommand*{\opR}{\op{R}}
+\newcommand*{\opS}{\op{S}}
+\newcommand*{\opT}{\op{T}}
+\newcommand*{\opU}{\op{U}}
+\newcommand*{\opV}{\op{V}}
+\newcommand*{\opW}{\op{W}}
+\newcommand*{\opX}{\op{X}}
+\newcommand*{\opY}{\op{Y}}
+\newcommand*{\opZ}{\op{Z}}
+
+%%%%%%%%
+% Sets %
+%%%%%%%%
+
+\newcommand*{\set}[1]{{\mathbb{#1}}}
+
+\newcommand*{\sA}{\set{A}}
+\newcommand*{\sB}{\set{B}}
+\newcommand*{\sC}{\set{C}}
+\newcommand*{\sD}{\set{D}}
+\newcommand*{\sE}{\set{E}}
+\newcommand*{\sF}{\set{F}}
+\newcommand*{\sG}{\set{G}}
+\newcommand*{\sH}{\set{H}}
+\newcommand*{\sI}{\set{I}}
+\newcommand*{\sJ}{\set{J}}
+\newcommand*{\sK}{\set{K}}
+\newcommand*{\sL}{\set{L}}
+\newcommand*{\sM}{\set{M}}
+\newcommand*{\sN}{\set{N}}
+\newcommand*{\sO}{\set{O}}
+\newcommand*{\sP}{\set{P}}
+\newcommand*{\sQ}{\set{Q}}
+\newcommand*{\sR}{\set{R}}
+\newcommand*{\sS}{\set{S}}
+\newcommand*{\sT}{\set{T}}
+\newcommand*{\sU}{\set{U}}
+\newcommand*{\sV}{\set{V}}
+\newcommand*{\sW}{\set{W}}
+\newcommand*{\sX}{\set{X}}
+\newcommand*{\sY}{\set{Y}}
+\newcommand*{\sZ}{\set{Z}}
+
+% Special sets
+\newcommand*{\N}{\sN}   % natural numbers
+\newcommand*{\Z}{\sZ}   % integer numbers
+\newcommand*{\Q}{\sQ}   % rational numbers
+\newcommand*{\R}{\sR}   % real numbers
+\newcommand*{\C}{\sC}   % complex numbers
+
+%%%%%%%%%%%%%%%%%%%%
+% Matrix operators %
+%%%%%%%%%%%%%%%%%%%%
+
+% Superscripts and subscripts
+\newcommand*{\super}[2]{{#1^{#2}}}
+\newcommand*{\sub}[2]{{#1^{#2}}}
+
+% Core matrix operators
+\newcommand*{\transposesymbol}{\mathsf{T}}
+\newcommand*{\hermitiansymbol}{\mathsf{H}}
+\newcommand*{\adjointsymbol}{'}
+\newcommand*{\inversesymbol}{-}
+\newcommand*{\pseudoinversesymbol}{+}
+
+\newcommand*{\transpose}[1]{\super{#1}{\transposesymbol}}
+\newcommand*{\conjugate}[1]{{\overline{#1}}}
+\newcommand*{\hermitian}[1]{\super{#1}{\hermitiansymbol}}
+\newcommand*{\adjoint}[1]{\super{#1}{\adjointsymbol}}
+\newcommand*{\inverse}[1]{\super{#1}{\inversesymbol 1}}
+\newcommand*{\pseudoinverse}[1]{\super{#1}{\pseudoinversesymbol}}
+
+% Abbreviations
+\newcommand*{\T}[1]{\transpose{#1}}
+\renewmathcommand{\H}[1]{\hermitian{#1}}
+\newcommand*{\adj}[1]{\adjoint{#1}}
+\newcommand*{\inv}[1]{\inverse{#1}}
+\newcommand*{\pinv}[1]{\pseudoinverse{#1}}
+
+% Combined operators
+\newcommand*{\Tinv}[1]{\super{#1}{\inversesymbol\transposesymbol}}
+\newcommand*{\adjinv}[1]{\super{#1}{\inversesymbol\adjointsymbol}}
+\newcommand*{\Tpinv}[1]{\super{#1}{\pseudoinversesymbol\transposesymbol}}
+\newcommand*{\adjpinv}[1]{\super{#1}{\pseudoinversesymbol\adjointsymbol}}
+\newcommand*{\invT}[1]{\Tinv}
+\newcommand*{\invadj}[1]{\adjinv}
+\newcommand*{\pinvT}[1]{\Tpseudoinv}
+\newcommand*{\pinvadj}[1]{\adjpseudoinv}
+
+%%%%%%%%%%%%
+% Calculus %
+%%%%%%%%%%%%
 
 % Differential operators
-\newcommand{\diff}{\mathrm{d}}
-\newcommand{\dx}{\, \diff x}
-\newcommand{\vecdx}{\, \diff \vecx}
-\newcommand{\dz}{\, \diff z}
-\newcommand{\vecdz}{\, \diff \vecz}
+\newcommand*{\dif}[2][1]{\mathrm{d}\ifstrequal{#1}{1}{}{^{#1}} #2}
+\newcommand*{\pdif}[2][1]{\partial\ifstrequal{#1}{1}{}{^{#1}} #2}
+\newcommand*{\diff}[2][1]{\mathrm{d} #2\ifstrequal{#1}{1}{}{^{#1}}}
+\newcommand*{\pdiff}[2][1]{\partial #2\ifstrequal{#1}{1}{}{^{#1}}}
+
+\newcommand*{\dx}{\diff{x}}
+\newcommand*{\dy}{\diff{y}}
+\newcommand*{\dz}{\diff{z}}
+\newcommand*{\dvx}{\diff{\vx}}
+\newcommand*{\dvy}{\diff{\vy}}
+\newcommand*{\dvz}{\diff{\vz}}

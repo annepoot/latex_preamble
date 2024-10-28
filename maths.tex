@@ -3,32 +3,6 @@
 \usepackage{mathcommand}    % allows definition of commands that are different inside and outside maths environments
 \usepackage{xparse}         % provides string comparison
 
-% Operators
-\newcommand{\cov}[2]{\text{cov}\left(#1, #2\right)}
-\newcommand{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
-\newcommand{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
-\newcommand{\inner}[3][]{\langle #2, #3 \rangle_{#1}}
-\newcommand{\diffop}{\mathcal{D}}
-\newcommand{\idop}{\mathcal{I}}
-\newcommand{\sqrtdiffop}{\mathcal{S}}
-\newcommand{\linear}{\mathcal{L}}
-\newcommand{\veclinear}{\boldsymbol{\linear}}
-\newcommand{\information}{\mathcal{I}}
-\newcommand{\vecinformation}{\boldsymbol{\information}}
-\newcommand{\mapc}{\mathcal{F}_\text{c}}
-\newcommand{\mapf}{\mathcal{F}_\text{f}}
-
-\DeclareMathOperator*{\diag}{diag}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\spn}{span}
-\DeclareMathOperator*{\rank}{rank}
-
-% Accents
-\newcommand{\boldtilde}[1]{\boldsymbol{\tilde{\text{$#1$}}}}
-\newcommand{\boldhat}[1]{\boldsymbol{\hat{\text{$#1$}}}}
-\newcommand{\boldstar}[1]{#1^*}
-
 %%%%%%%%%%%
 % Vectors %
 %%%%%%%%%%%
@@ -263,3 +237,22 @@
 \newcommand*{\dvx}{\diff{\vx}}
 \newcommand*{\dvy}{\diff{\vy}}
 \newcommand*{\dvz}{\diff{\vz}}
+
+%%%%%%%%%%%%%%%%%
+% Distributions %
+%%%%%%%%%%%%%%%%%
+
+\newcommand{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
+\newcommand{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
+
+%%%%%%%%%%%%%%%%%%%%%
+% General operators %
+%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator*{\diag}{diag}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\linspan}{span}
+\DeclareMathOperator*{\rank}{rank}
+
+\newcommand{\innerproduct}[3][]{\langle #2, #3 \rangle\ifstrempty{#1}{}{_{#1}}}

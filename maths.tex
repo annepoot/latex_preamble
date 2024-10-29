@@ -64,6 +64,8 @@
 \newcommand*{\vpsi}{\vec{\psi}}
 \newcommand*{\vomega}{\vec{\omega}}
 
+\newcommand*{\vnull}{\vec{0}}
+
 %%%%%%%%%%%%
 % Matrices %
 %%%%%%%%%%%%
@@ -108,6 +110,8 @@
 \newcommand*{\mPhi}{\mat{\Phi}}
 \newcommand*{\mPsi}{\mat{\Psi}}
 \newcommand*{\mOmega}{\mat{\Omega}}
+
+\newcommand*{\mnull}{\mat{0}}
 
 %%%%%%%%%%%%%
 % Operators %
@@ -221,6 +225,17 @@
 \newcommand*{\pinvT}[1]{\Tpseudoinv}
 \newcommand*{\pinvadj}[1]{\adjpseudoinv}
 
+%%%%%%%%%%%%%%%%%%%
+% Custom matrices %
+%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bmat}[1]{
+\begin{bmatrix}
+    #1
+\end{bmatrix}
+}
+
+
 %%%%%%%%%%%%
 % Calculus %
 %%%%%%%%%%%%
@@ -230,6 +245,7 @@
 \newcommand*{\pdif}[2][1]{\partial\ifstrequal{#1}{1}{}{^{#1}} #2}
 \newcommand*{\diff}[2][1]{\mathrm{d} #2\ifstrequal{#1}{1}{}{^{#1}}}
 \newcommand*{\pdiff}[2][1]{\partial #2\ifstrequal{#1}{1}{}{^{#1}}}
+\newcommand*{\laplacian}{\Delta}
 
 \newcommand*{\dx}{\diff{x}}
 \newcommand*{\dy}{\diff{y}}
@@ -238,12 +254,18 @@
 \newcommand*{\dvy}{\diff{\vy}}
 \newcommand*{\dvz}{\diff{\vz}}
 
+%%%%%%%%%
+% Logic %
+%%%%%%%%%
+
+\newcommand*{\definition}[2]{{#1}={#2}}
+
 %%%%%%%%%%%%%%%%%
 % Distributions %
 %%%%%%%%%%%%%%%%%
 
-\newcommand{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
-\newcommand{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
+\newcommand*{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
+\newcommand*{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
 
 %%%%%%%%%%%%%%%%%%%%%
 % General operators %
@@ -255,4 +277,11 @@
 \DeclareMathOperator*{\linspan}{span}
 \DeclareMathOperator*{\rank}{rank}
 
-\newcommand{\innerproduct}[3][]{\langle #2, #3 \rangle\ifstrempty{#1}{}{_{#1}}}
+\newcommand*{\diagof}[1]{\diag\left(#1\right)}
+\newcommand*{\argmaxof}[1]{\argmax\left(#1\right)}
+\newcommand*{\argminof}[1]{\argmin\left(#1\right)}
+\newcommand*{\linspanof}[1]{\linspan\left(#1\right)}
+\newcommand*{\rankof}[1]{\rank\left(#1\right)}
+
+\newcommand*{\innerproduct}[3][]{\langle #2, #3 \rangle\ifstrempty{#1}{}{_{#1}}}
+\newcommand*{\collection}[3]{\left\{#1, #2, \dots, #3\right\}}

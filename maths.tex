@@ -1,11 +1,12 @@
 \usepackage{amsmath}        % provides \DeclareMathOperator and such
 \usepackage{bm}             % provides bold symbols for both latin and greek letters
 \usepackage{mathcommand}    % allows definition of commands that are different inside and outside maths environments
+\usepackage{mathtools}      % provides \smallmatrix command
 \usepackage{xparse}         % provides string comparison
 
 %%%%%%%%%%%
 % Vectors %
-%%%%%%%%%%%
+%%%%%%%%%%preamble/maths.tex%
 
 \renewcommand*{\vec}[1]{{\bm{#1}}}
 
@@ -233,6 +234,12 @@
 \begin{bmatrix}
     #1
 \end{bmatrix}
+}
+
+\newcommand{\bsmallmat}[1]{
+\begin{bsmallmatrix}
+    #1
+\end{bsmallmatrix}
 }
 
 

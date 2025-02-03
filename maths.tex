@@ -1,4 +1,5 @@
 \usepackage{amsmath}        % provides \DeclareMathOperator and such
+\usepackage{amsfonts}       % provides \mathbb command
 \usepackage{bm}             % provides bold symbols for both latin and greek letters
 \usepackage{mathcommand}    % allows definition of commands that are different inside and outside maths environments
 \usepackage{mathtools}      % provides \smallmatrix command
@@ -277,6 +278,8 @@
 
 \newcommand*{\probabilityof}[2][]{p\left(#2 \ifstrempty{#1}{}{|#1} \right)}
 \newcommand*{\proposalof}[1]{q\left(#1\right)}
+\newcommand*{\expectationof}[1]{\mathbb{E}\left[#1\right]}
+\newcommand*{\varianceof}[1]{\mathbb{V}\left[#1\right]}
 
 %%%%%%%%%%%%%%%%%%%%%
 % General operators %

@@ -1,12 +1,26 @@
 
-\newcommand{\etal}{et al.\ }
-\newcommand{\idest}{i.e.\ }
+\usepackage{xspace}
+
+\newcommand{\idest}{i.e.,\ }
 \newcommand{\ie}{\idest}
-\newcommand{\exempligratia}{e.g.\ }
+\newcommand{\exempligratia}{e.g.,\ }
 \newcommand{\eg}{\exempligratia}
-\newcommand{\etcetera}{etc.\ }
+\newcommand{\etcetera}{etc\futurelet\temp\addspaceandorperiod}
 \newcommand{\etc}{\etcetera}
-\newcommand{\independentidenticallydistributed}{i.i.d.\ }
+\newcommand{\independentidenticallydistributed}{i.i.d\futurelet\temp\addspaceandorperiod}
 \newcommand{\iid}{\independentidenticallydistributed}
 
 \newcommand{\ith}{$i$th}
+
+\def\addspaceandorperiod{%
+  \ifx.\temp{}% add nothing
+  \else%
+    \ifcat a\temp\relax{.\ }% add period and space
+    \else%
+      \ifcat A\temp\relax{.\ }% add period and space
+    \else%
+      {.\nobreak\hspace{0pt}}% add period only
+    \fi
+  \fi
+\fi
+}

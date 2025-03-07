@@ -2,7 +2,7 @@
 \usepackage{amsfonts}       % provides \mathbb command
 \usepackage{bm}             % provides bold symbols for both latin and greek letters
 \usepackage{mathcommand}    % allows definition of commands that are different inside and outside maths environments
-\usepackage{mathtools}      % provides \smallmatrix command
+\usepackage{mathtools}      % provides \smallmatrix and \DeclarePairedDelimiter commands
 \usepackage{xparse}         % provides string comparison
 
 %%%%%%%%%%%
@@ -227,6 +227,16 @@
 \newcommand*{\pinvT}[1]{\Tpseudoinv}
 \newcommand*{\pinvadj}[1]{\adjpseudoinv}
 
+%%%%%%%%%%%%%%
+% Delimiters %
+%%%%%%%%%%%%%%
+\DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
+\DeclarePairedDelimiter{\bracks}{\lbrack}{\rbrack}
+\DeclarePairedDelimiter{\braces}{\lbrace}{\rbrace}
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+\DeclarePairedDelimiter{\singlepipes}{|}{|}
+\DeclarePairedDelimiter{\doublepipes}{\|}{\|}
+
 %%%%%%%%%%%%%%%%%%%
 % Custom matrices %
 %%%%%%%%%%%%%%%%%%%
@@ -242,7 +252,6 @@
     #1
 \end{bsmallmatrix}
 }
-
 
 %%%%%%%%%%%%
 % Calculus %
@@ -272,12 +281,12 @@
 % Distributions %
 %%%%%%%%%%%%%%%%%
 
-\newcommand*{\uniform}[2]{\mathcal{U}\left(#1, #2\right)}
-\newcommand*{\normal}[2]{\mathcal{N}\left(#1, #2\right)}
-\newcommand*{\GP}[2]{\mathcal{GP}\left(#1, #2\right)}
+\newcommand*{\uniform}[2]{\mathcal{U}\parens*{#1, #2}}
+\newcommand*{\normal}[2]{\mathcal{N}\parens*{#1, #2}}
+\newcommand*{\GP}[2]{\mathcal{GP}\parens*{#1, #2}}
 
-\newcommand*{\probabilityof}[2][]{p\left(#2 \ifstrempty{#1}{}{|#1} \right)}
-\newcommand*{\proposalof}[1]{q\left(#1\right)}
+\newcommand*{\probabilityof}[2][]{p\parens*{#2 \ifstrempty{#1}{}{|#1}}}
+\newcommand*{\proposalof}[1]{q\parens*{#1}}
 \newcommand*{\expectationof}[1]{\mathbb{E}\left[#1\right]}
 \newcommand*{\varianceof}[1]{\mathbb{V}\left[#1\right]}
 
@@ -291,11 +300,12 @@
 \DeclareMathOperator*{\linspan}{span}
 \DeclareMathOperator*{\rank}{rank}
 
-\newcommand*{\diagof}[1]{\diag\left(#1\right)}
-\newcommand*{\argmaxof}[1]{\argmax\left(#1\right)}
-\newcommand*{\argminof}[1]{\argmin\left(#1\right)}
-\newcommand*{\linspanof}[1]{\linspan\left(#1\right)}
-\newcommand*{\rankof}[1]{\rank\left(#1\right)}
+\newcommand*{\diagof}[1]{\diag\parens*{#1}}
+\newcommand*{\argmaxof}[1]{\argmax\parens*{#1}}
+\newcommand*{\argminof}[1]{\argmin\parens*{#1}}
+\newcommand*{\linspanof}[1]{\linspan\parens*{#1}}
+\newcommand*{\rankof}[1]{\rank\parens*{#1}}
 
-\newcommand*{\innerproduct}[3][]{\langle #2, #3 \rangle\ifstrempty{#1}{}{_{#1}}}
-\newcommand*{\collection}[3]{\left\{#1, #2, \dots, #3\right\}}
+\newcommand*{\norm}[2][]{\doublepipes*{#2}\ifstrempty{#1}{}{_{#1}}}
+\newcommand*{\innerproduct}[3][]{\angles*{#2, #3}\ifstrempty{#1}{}{_{#1}}}
+\newcommand*{\collection}[3]{\braces*{#1, #2, \dots, #3\right}}

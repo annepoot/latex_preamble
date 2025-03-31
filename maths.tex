@@ -304,8 +304,8 @@
 \DeclareMathOperator*{\rank}{rank}
 
 \newcommand*{\diagof}[1]{\diag\parens*{#1}}
-\newcommand*{\argmaxof}[1]{\argmax\parens*{#1}}
-\newcommand*{\argminof}[1]{\argmin\parens*{#1}}
+\newcommand*{\argmaxof}[2][]{\argmax\ifstrempty{#1}{}{_{#1}}\parens*{#2}}
+\newcommand*{\argminof}[2][]{\argmin\ifstrempty{#1}{}{_{#1}}\parens*{#2}}
 \newcommand*{\linspanof}[1]{\linspan\parens*{#1}}
 \newcommand*{\rankof}[1]{\rank\parens*{#1}}
 

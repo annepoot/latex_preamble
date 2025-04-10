@@ -283,18 +283,62 @@
 % Distributions %
 %%%%%%%%%%%%%%%%%
 
-\newcommand*{\uniform}[2]{\mathcal{U}\parens*{#1, #2}}
-\newcommand*{\normal}[2]{\mathcal{N}\parens*{#1, #2}}
-\newcommand*{\dirac}[1]{\delta\parens*{#1}}
-\newcommand*{\GP}[2]{\mathcal{GP}\parens*{#1, #2}}
+\NewDocumentCommand{\uniform}{s m m}{
+  \IfBooleanTF{#1}
+    {\mathcal{U}\parens*{#2, #3}}
+    {\mathcal{U}\parens{#2, #3}}
+}
 
-\newcommand*{\probabilityof}[2][]{p\parens*{#2 \ifstrempty{#1}{}{|#1}}}
-\newcommand*{\proposalof}[1]{q\parens*{#1}}
-\newcommand*{\expectationof}[1]{\mathbb{E}\left[#1\right]}
+\NewDocumentCommand{\normal}{s m m}{
+  \IfBooleanTF{#1}
+    {\mathcal{N}\parens*{#2, #3}}
+    {\mathcal{N}\parens{#2, #3}}
+}
+
+\NewDocumentCommand{\dirac}{s m}{
+  \IfBooleanTF{#1}
+    {\delta\parens*{#2}}
+    {\delta\parens{#2}}
+}
+
+\NewDocumentCommand{\GP}{s m m}{
+  \IfBooleanTF{#1}
+    {\mathcal{GP}\parens*{#2, #3}}
+    {\mathcal{GP}\parens{#2, #3}}
+}
+
 \DeclareMathOperator{\variance}{Var}
 \DeclareMathOperator{\covariance}{Cov}
-\newcommand*{\varianceof}[1]{\variance\parens{#1}}
-\newcommand*{\covarianceof}[2]{\covariance\parens*{#1, #2}}
+
+\NewDocumentCommand{\probabilityof}{s o m}{
+  \IfBooleanTF{#1}
+    {p\parens*{#3\IfValueT{#2}{|#2}}}
+    {p\parens{#3\IfValueT{#2}{|#2}}}
+}
+
+\NewDocumentCommand{\proposalof}{s m}{
+  \IfBooleanTF{#1}
+    {q\parens*{#2}}
+    {q\parens{#2}}
+}
+
+\NewDocumentCommand{\expectationof}{s m}{
+  \IfBooleanTF{#1}
+    {\mathbb{E}\bracks*{#2}}
+    {\mathbb{E}\bracks{#2}}
+}
+
+\NewDocumentCommand{\varianceof}{s m}{
+  \IfBooleanTF{#1}
+    {\variance\parens*{#2}}
+    {\variance\parens{#2}}
+}
+
+\NewDocumentCommand{\covarianceof}{s m m}{
+  \IfBooleanTF{#1}
+    {\covariance\parens*{#2, #3}}
+    {\covariance\parens{#2, #3}}
+}
 
 %%%%%%%%%%%%%%%%%%%%%
 % General operators %
@@ -306,13 +350,52 @@
 \DeclareMathOperator*{\linspan}{span}
 \DeclareMathOperator*{\rank}{rank}
 
-\newcommand*{\diagof}[1]{\diag\parens*{#1}}
-\newcommand*{\argmaxof}[2][]{\argmax\ifstrempty{#1}{}{_{#1}}\parens*{#2}}
-\newcommand*{\argminof}[2][]{\argmin\ifstrempty{#1}{}{_{#1}}\parens*{#2}}
-\newcommand*{\linspanof}[1]{\linspan\parens*{#1}}
-\newcommand*{\rankof}[1]{\rank\parens*{#1}}
+\NewDocumentCommand{\diagof}{s m}{
+  \IfBooleanTF{#1}
+    {\diag\parens*{#2}}
+    {\diag\parens{#2}}
+}
 
-\newcommand*{\norm}[2][]{\doublepipes*{#2}\ifstrempty{#1}{}{_{#1}}}
-\newcommand*{\innerproduct}[3][]{\angles*{#2, #3}\ifstrempty{#1}{}{_{#1}}}
-\newcommand*{\collection}[3]{\braces*{#1, #2, \dots, #3\right}}
+\NewDocumentCommand{\argmaxof}{s o m}{
+  \IfBooleanTF{#1}
+    {\argmax\IfValueT{#2}{_{#2}}\parens*{#3}}
+    {\argmax\IfValueT{#2}{_{#2}}\parens{#3}}
+}
+
+\NewDocumentCommand{\argminof}{s o m}{
+  \IfBooleanTF{#1}
+    {\argmin\IfValueT{#2}{_{#2}}\parens*{#3}}
+    {\argmin\IfValueT{#2}{_{#2}}\parens{#3}}
+}
+
+\NewDocumentCommand{\linspanof}{s m}{
+  \IfBooleanTF{#1}
+    {\linspan\parens*{#2}}
+    {\linspan\parens{#2}}
+}
+
+\NewDocumentCommand{\rankof}{s m}{
+  \IfBooleanTF{#1}
+    {\rank\parens*{#2}}
+    {\rank\parens{#2}}
+}
+
+\NewDocumentCommand{\norm}{s o m}{
+  \IfBooleanTF{#1}
+    {\doublepipes*{#3}\IfValueT{#2}{_{#2}}}
+    {\doublepipes{#3}\IfValueT{#2}{_{#2}}}
+}
+
+\NewDocumentCommand{\innerproduct}{s o m m}{
+  \IfBooleanTF{#1}
+    {\angles*{#3, #4}\IfValueT{#2}{_{#2}}}
+    {\angles{#3, #4}\IfValueT{#2}{_{#2}}}
+}
+
+\NewDocumentCommand{\collection}{s m m m}{
+  \IfBooleanTF{#1}
+    {\braces*{#2, #3, \dots, #4}}
+    {\braces{#2, #3, \dots, #4}}
+}
+
 \newcommand*{\bigO}[1]{\mathcal{O}\parens{#1}}

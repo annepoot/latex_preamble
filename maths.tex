@@ -291,7 +291,10 @@
 \newcommand*{\probabilityof}[2][]{p\parens*{#2 \ifstrempty{#1}{}{|#1}}}
 \newcommand*{\proposalof}[1]{q\parens*{#1}}
 \newcommand*{\expectationof}[1]{\mathbb{E}\left[#1\right]}
-\newcommand*{\varianceof}[1]{\mathbb{V}\left[#1\right]}
+\DeclareMathOperator{\variance}{Var}
+\DeclareMathOperator{\covariance}{Cov}
+\newcommand*{\varianceof}[1]{\variance\parens{#1}}
+\newcommand*{\covarianceof}[2]{\covariance\parens*{#1, #2}}
 
 %%%%%%%%%%%%%%%%%%%%%
 % General operators %

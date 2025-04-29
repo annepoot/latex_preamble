@@ -1,28 +1,25 @@
 
 \usepackage{xspace}
 
-\newcommand{\etalia}{et al\futurelet\temp\addspaceandorperiod}
-\newcommand{\etal}{\etalia}
-\newcommand{\idest}{i.e.,\ }
-\newcommand{\ie}{\idest}
-\newcommand{\exempligratia}{e.g.,\ }
-\newcommand{\eg}{\exempligratia}
-\newcommand{\etcetera}{etc\futurelet\temp\addspaceandorperiod}
-\newcommand{\etc}{\etcetera}
-\newcommand{\independentidenticallydistributed}{i.i.d\futurelet\temp\addspaceandorperiod}
-\newcommand{\iid}{\independentidenticallydistributed}
+\makeatletter
+\newcommand{\etal}{\@ifstar\etalstar\etalnostar}
+\newcommand{\etc}{\@ifstar\etcstar\etcnostar}
+\newcommand{\iid}{\@ifstar\iidstar\iidnostar}
+\makeatother
+
+\newcommand{\etalstar}{et~al.}
+\newcommand{\etalnostar}{et~al.\@\xspace}
+\newcommand{\ie}{i.e.\@\xspace}
+\newcommand{\eg}{e.g.\@\xspace}
+\newcommand{\etcstar}{etc.}
+\newcommand{\etcnostar}{etc.\@\xspace}
+\newcommand{\iidstar}{i.i.d.}
+\newcommand{\iidnostar}{i.i.d.\@\xspace}
+
+\newcommand{\etalia}{\etal}
+\newcommand{\idest}{\ie}
+\newcommand{\exempligratia}{\eg}
+\newcommand{\etcetera}{\etc}
+\newcommand{\independentidenticallydistributed}{\iid}
 
 \newcommand{\ith}{$i$th}
-
-\def\addspaceandorperiod{%
-  \ifx.\temp{}% add nothing
-  \else%
-    \ifcat a\temp\relax{.\ }% add period and space
-    \else%
-      \ifcat A\temp\relax{.\ }% add period and space
-      \else%
-        {.\nobreak\hspace{0pt}}% add period only
-      \fi
-    \fi
-  \fi
-}

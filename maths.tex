@@ -307,6 +307,12 @@
     {\mathcal{GP}\parens{#2, #3}}
 }
 
+\NewDocumentCommand{\GF}{s m m}{
+  \IfBooleanTF{#1}
+    {\mathcal{GF}\parens*{#2, #3}}
+    {\mathcal{GF}\parens{#2, #3}}
+}
+
 \DeclareMathOperator{\variance}{Var}
 \DeclareMathOperator{\covariance}{Cov}
 

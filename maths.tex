@@ -355,6 +355,7 @@
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\linspan}{span}
 \DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator*{\trace}{tr}
 
 \NewDocumentCommand{\diagof}{s m}{
   \IfBooleanTF{#1}
@@ -384,6 +385,12 @@
   \IfBooleanTF{#1}
     {\rank\parens*{#2}}
     {\rank\parens{#2}}
+}
+
+\NewDocumentCommand{\traceof}{s m}{
+  \IfBooleanTF{#1}
+    {\trace\parens*{#2}}
+    {\trace\parens{#2}}
 }
 
 \NewDocumentCommand{\norm}{s o m}{

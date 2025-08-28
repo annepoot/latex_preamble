@@ -284,16 +284,36 @@
 % Distributions %
 %%%%%%%%%%%%%%%%%
 
-\NewDocumentCommand{\uniform}{s m m}{
-  \IfBooleanTF{#1}
-    {\mathcal{U}\parens*{#2, #3}}
-    {\mathcal{U}\parens{#2, #3}}
+\NewDocumentCommand{\uniform}{s o m m}{
+  \IfBooleanTF{#1}{
+    \IfNoValueTF{#2}{
+      \mathcal{U}\parens*{#3, #4}
+    }{
+      \mathcal{U}\parens*{#2 | #3, #4}
+    }
+  }{
+    \IfNoValueTF{#2}{
+      \mathcal{U}\parens{#3, #4}
+    }{
+      \mathcal{U}\parens{#2 | #3, #4}
+    }
+  }
 }
 
-\NewDocumentCommand{\normal}{s m m}{
-  \IfBooleanTF{#1}
-    {\mathcal{N}\parens*{#2, #3}}
-    {\mathcal{N}\parens{#2, #3}}
+\NewDocumentCommand{\normal}{s o m m}{
+  \IfBooleanTF{#1}{
+    \IfNoValueTF{#2}{
+      \mathcal{N}\parens*{#3, #4}
+    }{
+      \mathcal{N}\parens*{#2 | #3, #4}
+    }
+  }{
+    \IfNoValueTF{#2}{
+      \mathcal{N}\parens{#3, #4}
+    }{
+      \mathcal{N}\parens{#2 | #3, #4}
+    }
+  }
 }
 
 \NewDocumentCommand{\dirac}{s m}{

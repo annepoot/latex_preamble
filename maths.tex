@@ -369,6 +369,14 @@
     {\covariance\parens{#2, #3}}
 }
 
+\DeclareMathOperator{\wasserstein}{W}
+
+\NewDocumentCommand{\wassersteinof}{s o m m}{
+  \IfBooleanTF{#1}
+    {\wasserstein_{\IfValueTF{#2}{#2}{2}}\parens*{#3, #4}}
+    {\wasserstein_{\IfValueTF{#2}{#2}{2}}\parens{#3, #4}}
+}
+
 %%%%%%%%%%%%%%%%%%%%%
 % General operators %
 %%%%%%%%%%%%%%%%%%%%%

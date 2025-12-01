@@ -3,6 +3,13 @@
 \usepackage{mathtools}      % provides \smallmatrix and \DeclarePairedDelimiter commands
 \usepackage{xparse}         % provides string comparison
 
+\makeatletter
+\@ifpackageloaded{unicode-math}
+  {}{
+    \usepackage{amsfonts}
+  }
+\makeatother
+
 % Put the following in preamble:
 % \usepackage{unicode-math}   % modern maths formatting
 % \setmathfont{Latin Modern Math}[range=\mathcal]

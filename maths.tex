@@ -4,10 +4,33 @@
 \usepackage{xparse}         % provides string comparison
 
 \makeatletter
+\ifx\XeTeXrevision\undefined
+  % Compilation not done with xelatex
+  \usepackage{amsfonts}
+\else
+  % Compilation done with xelatex
+  \@ifpackageloaded{unicode-math}
+    {
+      % unicode-math already loaded
+      \setmathfont{Latin Modern Math}[range=\mathcal]
+    }
+    {
+      % unicode-math not yet loaded
+      \usepackage{unicode-math}
+      \setmathfont{Latin Modern Math}
+    }
+\fi
+\makeatother
+
+\makeatletter
 \@ifpackageloaded{unicode-math}
-  {}{
-    \usepackage{amsfonts}
-  }
+  {
+    \@ifpackageloaded{mathtools}
+      {
+        \let\overbracket\Uoverbracket
+        \let\underbracket\Uunderbracket
+      }{}
+  }{}
 \makeatother
 
 % Put the following in preamble:

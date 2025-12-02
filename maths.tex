@@ -16,21 +16,10 @@
     }
     {
       % unicode-math not yet loaded
-      \usepackage{unicode-math}
+      \usepackage[warnings-off={mathtools-overbracket}]{unicode-math}
       \setmathfont{Latin Modern Math}
     }
 \fi
-\makeatother
-
-\makeatletter
-\@ifpackageloaded{unicode-math}
-  {
-    \@ifpackageloaded{mathtools}
-      {
-        \let\overbracket\Uoverbracket
-        \let\underbracket\Uunderbracket
-      }{}
-  }{}
 \makeatother
 
 % Put the following in preamble:

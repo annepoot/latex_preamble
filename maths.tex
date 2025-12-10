@@ -475,6 +475,12 @@
     {\doublepipes{#3}\IfValueT{#2}{_{#2}}}
 }
 
+\NewDocumentCommand{\seminorm}{s o m}{
+  \IfBooleanTF{#1}
+    {\singlepipes*{#3}\IfValueT{#2}{_{#2}}}
+    {\singlepipes{#3}\IfValueT{#2}{_{#2}}}
+}
+
 \NewDocumentCommand{\innerproduct}{s o m m}{
   \IfBooleanTF{#1}
     {\angles*{#3, #4}\IfValueT{#2}{_{#2}}}

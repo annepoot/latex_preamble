@@ -485,7 +485,7 @@
 
 \NewDocumentCommand{\innerproduct}{s o m m}{
   \IfBooleanTF{#1}
-    {\angs{#3, #4}\IfValueT{#2}{_{#2}}}
+    {\angs*{#3, #4}\IfValueT{#2}{_{#2}}}
     {\angs{#3, #4}\IfValueT{#2}{_{#2}}}
 }
 

@@ -20,7 +20,6 @@ L -> beam length, loss function, L-space
 \alpha -> hole angle, significance level
 \eta -> relative interpolation error, hyperparameter
 \theta -> parameter, log diffusion
-\lambda -> eigenvalue, lagrange multiplier
 \nu -> wave number, poisson's ratio
 \phi -> eigenfunction, test function
 
@@ -120,7 +119,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\logdiffusion}{\theta}
 \newcommand*{\diffusion}{\kappa}
 \newcommand*{\eigenvalue}{\lambda}
-\newcommand*{\lagrangemultiplier}{\lambda}
+\newcommand*{\lagrangemultiplier}{\mu}
 \newcommand*{\wavenumber}{\nu}
 \newcommand*{\poissonsratio}{\nu}
 \newcommand*{\statfemscale}{\rho}

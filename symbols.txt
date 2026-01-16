@@ -2,10 +2,7 @@
 Potential conflicts:
 
 d -> dimensionality, hole size, misspecification
-k -> spring stiffness, kernelfunction
-ell -> linear functional, length scale
 m -> mean function, trial function count
-n -> test function count, number of ... (subscript)
 w -> arbitrary function, prescribed displacement
 x -> x, hole location
 y -> hole location, observation

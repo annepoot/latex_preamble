@@ -171,6 +171,13 @@
 \newcommand*{\hypersolutionspace}{\fem{\hyper{\solutionspace}}}
 \newcommand*{\hypermesh}{\fem{\hyper{\meshsymbol}}}
 
+% GP regression stuff
+\newcommand*{\meanfunction}{m}
+\newcommand*{\kernelfunction}{k}
+\newcommand*{\lengthscale}{\ell}
+\newcommand*{\variancescale}{\sigma}
+\newcommand*{\lossfunction}{L}
+
 % Inverse problems stuff
 \newcommand*{\parameter}{\theta}
 \newcommand*{\parameters}{\vtheta}
@@ -191,14 +198,9 @@
 \newcommand*{\posterior}{\probabilityof[\observations]{\parameters}}
 \newcommand*{\evidence}{\probabilityof{\observations}}
 \newcommand*{\noise}{\ve}
-\newcommand*{\noisescale}{\sigma_e}
+\newcommand*{\noisescale}{\variancescale_e}
 \newcommand*{\noisecovariance}{\noisescale^2 \identitymatrix}
 \newcommand*{\significancelevel}{\alpha}
-
-% GP regression stuff
-\newcommand*{\meanfunction}{m}
-\newcommand*{\kernelfunction}{k}
-\newcommand*{\lossfunction}{L}
 
 % MCMC stuff
 \newcommand*{\hyperparameter}{\eta}
@@ -211,7 +213,7 @@
 % BFEM stuff
 \newcommand*{\bfemprior}{\probabilityof[\parameters]{\solution}}
 \newcommand*{\bfemposterior}{\probabilityof[\sourcevector,\parameters]{\solution}}
-\newcommand*{\bfemscale}{\sigma_u}
+\newcommand*{\bfemscale}{\variancescale_u}
 \newcommand*{\argmaxbfemscale}{\hat{\sigma}_u}
 \newcommand*{\bfempriorcovariance}{\opS}
 \newcommand*{\bfemposteriormean}{m_*}
@@ -278,9 +280,9 @@
 % StatFEM stuff
 \newcommand*{\misspecificationsymbol}{d}
 \newcommand*{\misspecification}{\fmtvector{\misspecificationsymbol}}
-\newcommand*{\misspecificationkernel}{k_\misspecificationsymbol}
-\newcommand*{\misspecificationlength}{\ell_\misspecificationsymbol}
-\newcommand*{\misspecificationscale}{\sigma_\misspecificationsymbol}
+\newcommand*{\misspecificationkernel}{\kernelfunction_\misspecificationsymbol}
+\newcommand*{\misspecificationlength}{\lengthscale_\misspecificationsymbol}
+\newcommand*{\misspecificationscale}{\variancescale_\misspecificationsymbol}
 \newcommand*{\statfemscale}{\rho}
 
 % Test case stuff

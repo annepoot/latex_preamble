@@ -1,6 +1,12 @@
 
-Potential conflicts:
+Significant conflicts:
+\mX -> observation locations, sample matrix
+\alpha -> hole angle, significance level
+\nu -> wave number, poisson's ratio
+\phi -> eigenfunction, test function
+\opG -> Green's function, observation operator
 
+Acceptable conflicts:
 d -> dimensionality, hole size, misspecification
 m -> mean function, trial function count
 w -> arbitrary function, prescribed displacement
@@ -15,19 +21,12 @@ J -> energy, quantity of interest
 H -> beam height, Hilbert space
 L -> beam length, loss function, L-space
 
-\mX -> observation locations, sample matrix
-
-\alpha -> hole angle, significance level
 \eta -> relative interpolation error, hyperparameter
 \theta -> parameter, log diffusion
-\nu -> wave number, poisson's ratio
-\phi -> eigenfunction, test function
 
 \valpha -> perturbation, perturbations
 \vsigma -> stress field, std vector
 
-\opI -> identity operator, information operator
-\opG -> Green's function, observation operator
 
 % Latin lowercase
 \newcommand*{\beamoverhang}{c}

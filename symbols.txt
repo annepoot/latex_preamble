@@ -11,7 +11,7 @@ y -> hole location, observation
 \vf -> source field, source vector
 \vu -> displacement field, solution vector
 
-E -> Young's modulus, energy
+J -> energy, quantity of interest
 H -> beam height, Hilbert space
 L -> beam length, loss function, L-space
 

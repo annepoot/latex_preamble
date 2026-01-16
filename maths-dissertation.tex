@@ -9,6 +9,7 @@
 \newcommand*{\ofvx}{\of[\vx]}
 \newcommand*{\ofxprime}{\of[x']}
 \newcommand*{\ofxxprime}{\of[x][x']}
+\newcommand*{\numberof}[1]{n_{#1}}
 \newcommand*{\identityoperator}{\opI}
 \newcommand*{\identitymatrix}{\mI}
 \newcommand*{\arbitraryfunctionv}{v}
@@ -81,8 +82,8 @@
 \newcommand*{\meshsymbol}{\mathcal{T}}
 \newcommand*{\meshsize}{h}
 \newcommand*{\mesh}{\fem{\meshsymbol}}
-\newcommand*{\nodecount}{n_n}
-\newcommand*{\elementcount}{n_e}
+\newcommand*{\nodecount}{\numberof{n}}
+\newcommand*{\elementcount}{\numberof{e}}
 
 % Explicit FEM notation
 \newcommand*{\testfunctionsymbol}{\phi}
@@ -173,7 +174,7 @@
 % Inverse problems stuff
 \newcommand*{\parameter}{\theta}
 \newcommand*{\parameters}{\vtheta}
-\newcommand*{\parametercount}{k}
+\newcommand*{\parametercount}{\numberof{\parameters}}
 \newcommand*{\parametrizeddifferentialoperator}{\differentialoperator_\parameters}
 \newcommand*{\parametrizedbilinearoperator}{\bilinearoperator_\parameters}
 \newcommand*{\parametrizedgreensfunction}{\greensfunction_\parameters}
@@ -181,7 +182,7 @@
 \newcommand*{\parametrizedfemsolution}{\fem{\solution}_\parameters}
 \newcommand*{\observation}{y}
 \newcommand*{\observations}{\vy}
-\newcommand*{\observationcount}{m}
+\newcommand*{\observationcount}{\numberof{\observations}}
 \newcommand*{\observationoperator}{\opP}
 \newcommand*{\observationlocation}{X}
 \newcommand*{\observationlocations}{\mX}

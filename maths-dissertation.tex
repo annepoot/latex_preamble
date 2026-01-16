@@ -1,0 +1,326 @@
+% Load general maths formatting
+\input{preamble/preamble/maths}
+
+% Define paper-specific formatting
+
+% General stuff
+\NewDocumentCommand{\of}{o o}{(\IfValueT{#1}{#1}\IfValueT{#2}{, #2})}
+\newcommand*{\ofx}{\of[x]}
+\newcommand*{\ofvx}{\of[\vx]}
+\newcommand*{\ofxprime}{\of[x']}
+\newcommand*{\ofxxprime}{\of[x][x']}
+\newcommand*{\identityoperator}{\opI}
+\newcommand*{\identitymatrix}{\mI}
+\newcommand*{\arbitraryfunctionv}{v}
+\newcommand*{\arbitraryfunctionw}{w}
+\newcommand*{\arbitraryvectorv}{\vv}
+\newcommand*{\arbitraryvectorw}{\vw}
+\newcommand*{\reals}[1][]{\ifstrempty{#1}{\sR}{\sR^{#1}}}
+\newcommand*{\lagrangemultiplier}{\lambda}
+
+% Function spaces
+\NewDocumentCommand{\Lspace}{O{2}}{L^{#1}}
+\NewDocumentCommand{\Hspace}{s m}{\IfBooleanTF{#1}{H^{#2}_0}{H^{#2}}}
+\NewDocumentCommand{\Wspace}{m m}{W^{#1,#2}}
+
+% Standard PDE stuff
+\newcommand*{\dimensionality}{d}
+\newcommand*{\domain}{\Omega}
+\newcommand*{\overdomain}{\of[\domain]}
+\newcommand*{\boundary}{\partial\Omega}
+\newcommand*{\dirichletboundary}{\Gamma_\text{D}}
+\newcommand*{\neumannboundary}{\Gamma_\text{N}}
+\newcommand*{\differentialoperator}{\opD}
+\newcommand*{\solutionsymbol}{u}
+\newcommand*{\sourcesymbol}{f}
+\newcommand*{\solution}{\solutionsymbol}
+\newcommand*{\source}{\sourcesymbol}
+\newcommand*{\energy}{E}
+
+% Adjoint PDE stuff
+\newcommand*{\adjointsolution}{\solution_g}
+\newcommand*{\adjointsource}{g}
+\newcommand*{\linearfunctional}{\ell}
+\newcommand*{\linfunctional}{\linearfunctional}
+\newcommand*{\quantityofinterest}{J}
+
+% Eigenproblem PDE stuff
+\newcommand*{\eigenfunction}{\phi}
+\newcommand*{\eigenvalue}{\lambda}
+\newcommand*{\greensfunction}{\opG}
+
+% Specific PDE stuff
+\newcommand*{\gradientof}{\nabla}
+\newcommand*{\divergenceof}{\nabla \cdot}
+\newcommand*{\symmetricgradientof}{\gradientof_\text{s}}
+
+% Solid mechanics stuff
+\newcommand*{\homsolutionspace}{\solutionspace_0}
+\newcommand*{\displacementfield}{\vu}
+\newcommand*{\homdisplacementfield}{\vu_0}
+\newcommand*{\femhomdisplacementfield}{\fem{\vu}_0}
+\newcommand*{\inhomdisplacementfield}{\hat{\vu}}
+\newcommand*{\strainfield}{\vvarepsilon}
+\newcommand*{\stressfield}{\vsigma}
+\newcommand*{\sourcefield}{\vf}
+\newcommand*{\tractionfield}{\vt}
+\newcommand*{\normalfield}{\vn}
+\newcommand*{\elasticitytensor}{C}
+\newcommand*{\dirichletfield}{\bar{\displacementfield}}
+\newcommand*{\neumannfield}{\bar{\tractionfield}}
+
+% Heat equation stuff
+\newcommand*{\diffusion}{\kappa}
+\newcommand*{\logdiffusion}{\theta}
+
+% Weak form stuff
+\newcommand*{\bilinearoperator}{\opA}
+\newcommand*{\solutionspace}{\opV}
+
+% Mesh-related stuff
+\newcommand*{\meshsymbol}{\mathcal{T}}
+\newcommand*{\meshsize}{h}
+\newcommand*{\mesh}{\fem{\meshsymbol}}
+\newcommand*{\nodecount}{n_n}
+\newcommand*{\elementcount}{n_e}
+
+% Explicit FEM notation
+\newcommand*{\testfunctionsymbol}{\phi}
+\newcommand*{\trialfunctionsymbol}{\psi}
+\newcommand*{\testfunction}{\testfunctionsymbol}
+\newcommand*{\trialfunction}{\trialfunctionsymbol}
+\newcommand*{\testvector}{\vphi}
+\newcommand*{\trialvector}{\vpsi}
+\newcommand*{\testfunctioncount}{n}
+\newcommand*{\trialfunctioncount}{m}
+
+\newcommand*{\fem}[1]{{#1}^\mathrm{\meshsize}}
+\newcommand*{\femsolution}{\fem{\solution}}
+\newcommand*{\femsolutionspace}{\fem{\solutionspace}}
+\newcommand*{\femhomsolutionspace}{\fem{\solutionspace}_0}
+
+% Implicit FEM notation
+\newcommand*{\weakformoperator}{\opL}
+\newcommand*{\projectionoperator}{\opP}
+\newcommand*{\perpprojectionoperator}{\projectionoperator_\perp}
+\newcommand*{\crossstiffnessoperator}{\opH}
+\newcommand*{\crossstiffnessoperation}{\mathcal{h}}
+\newcommand*{\informationoperator}{\opI}
+\newcommand*{\informationoperation}{\mathcal{i}}
+
+% \newcommand*{\observationweakformoperator}{\weakformoperator}
+% \newcommand*{\observationprojectionoperator}{\projectionoperator}
+
+% FEM stuff (general)
+\newcommand*{\stiffnessmatrix}{\mK}
+\newcommand*{\massmatrix}{\mM}
+\newcommand*{\solutionvector}{\fmtvector{\solutionsymbol}}
+\newcommand*{\sourcevector}{\fmtvector{\sourcesymbol}}
+\newcommand*{\femenergy}{\fem{\energy}}
+\newcommand*{\femadjointsolution}{\fem{\adjointsolution}}
+
+% \newcommand*{\observationstiffnessmatrix}{\mK}
+% \newcommand*{\observationmassmatrix}{\mM}
+
+% Truth and error
+\newcommand*{\true}[1]{{#1}^\star}
+\newcommand*{\exact}[1]{\true{#1}}
+\newcommand*{\truesolution}{\true{\solution}}
+\newcommand*{\trueparameters}{\true{\parameters}}
+\newcommand*{\trueenergy}{\true{\energy}}
+\newcommand*{\fielderror}{e\ofx}
+\newcommand*{\nodalerror}{\ve}
+\newcommand*{\fielderrornorm}{\|e\ofx\|}
+\newcommand*{\nodalerrornorm}{\|\ve\|}
+\newcommand*{\nodalerrorrel}{\zeta}
+\newcommand*{\intererrorrel}{\eta}
+\newcommand*{\errorsymbol}{e}
+\newcommand*{\error}{\fem{\errorsymbol}}
+\newcommand*{\errorvector}{\ve}
+
+% Reference mesh stuff
+\newcommand*{\reference}[1]{\tilde{#1}}
+\newcommand*{\referencestiffnessmatrix}{\reference{\mK}}
+\newcommand*{\referencemassmatrix}{\reference{\mM}}
+% \newcommand*{\referencesolution}{\reference{\solution}}
+\newcommand*{\referencesolutionvector}{\reference{\solutionvector}}
+\newcommand*{\referencesourcevector}{\reference{\sourcevector}}
+\newcommand*{\referencesolutionspace}{\fem{\reference{\solutionspace}}}
+\newcommand*{\referencetestspace}{\fem{\reference{\solutionspace}}_0}
+\newcommand*{\referencetrialspace}{\fem{\reference{\trialspace}}}
+\newcommand*{\referenceweakformoperator}{\reference{\weakformoperator}}
+\newcommand*{\referenceprojectionoperator}{\reference{\projectionoperator}}
+\newcommand*{\referenceperpprojectionoperator}{\reference{\projectionoperator}_\perp}
+
+\newcommand*{\referencefem}[1]{{#1}^\mathrm{\referencemeshsize}}
+\newcommand*{\referencemeshsize}{\reference{\meshsize}}
+\newcommand*{\referencemesh}{\fem{\reference{\meshsymbol}}}
+\newcommand*{\referenceerror}{\fem{\reference{\errorsymbol}}}
+\newcommand*{\referencefemadjointsolution}{\referencefem{\adjointsolution}}
+
+\newcommand*{\crossstiffnessmatrix}{\mH}
+\newcommand*{\crossmassmatrix}{\mM_\text{x}}
+\newcommand*{\interpolationmatrix}{\mPhi}
+
+% Hypermesh stuff
+\newcommand*{\hyper}[1]{\hat{#1}}
+\newcommand*{\hyperstiffnessmatrix}{\hyper{\mK}}
+\newcommand*{\hyperobservationinterpolationmatrix}{\hyper{\mPhi}}
+\newcommand*{\hyperreferenceinterpolationmatrix}{\hyper{\reference{\mPhi}}}
+\newcommand*{\hypersolutionspace}{\fem{\hyper{\solutionspace}}}
+\newcommand*{\hypermesh}{\fem{\hyper{\meshsymbol}}}
+
+% Inverse problems stuff
+\newcommand*{\parameter}{\theta}
+\newcommand*{\parameters}{\vtheta}
+\newcommand*{\parametercount}{k}
+\newcommand*{\parametrizeddifferentialoperator}{\differentialoperator_\parameters}
+\newcommand*{\parametrizedbilinearoperator}{\bilinearoperator_\parameters}
+\newcommand*{\parametrizedgreensfunction}{\greensfunction_\parameters}
+\newcommand*{\parametrizedsolution}{\solution_\parameters}
+\newcommand*{\parametrizedfemsolution}{\fem{\solution}_\parameters}
+\newcommand*{\observation}{y}
+\newcommand*{\observations}{\vy}
+\newcommand*{\observationcount}{m}
+\newcommand*{\observationoperator}{\opP}
+\newcommand*{\observationlocation}{X}
+\newcommand*{\observationlocations}{\mX}
+\newcommand*{\prior}{\probabilityof{\parameters}}
+\newcommand*{\likelihood}{\probabilityof[\parameters]{\observations}}
+\newcommand*{\posterior}{\probabilityof[\observations]{\parameters}}
+\newcommand*{\evidence}{\probabilityof{\observations}}
+\newcommand*{\noise}{\ve}
+\newcommand*{\noisescale}{\sigma_e}
+\newcommand*{\noisecovariance}{\noisescale^2 \identitymatrix}
+\newcommand*{\significancelevel}{\alpha}
+
+% GP regression stuff
+\newcommand*{\meanfunction}{m}
+\newcommand*{\kernelfunction}{k}
+\newcommand*{\lossfunction}{L}
+
+% MCMC stuff
+\newcommand*{\hyperparameter}{\eta}
+\newcommand*{\hyperparameters}{\veta}
+\newcommand*{\samplecount}{N}
+\newcommand*{\burninsamplecount}{\samplecount_\text{burn}}
+\newcommand*{\pseudomarginalsamplecount}{M}
+\newcommand*{\tempering}{\tau}
+
+% BFEM stuff
+\newcommand*{\bfemprior}{\probabilityof[\parameters]{\solution}}
+\newcommand*{\bfemposterior}{\probabilityof[\sourcevector,\parameters]{\solution}}
+\newcommand*{\bfemscale}{\sigma_u}
+\newcommand*{\argmaxbfemscale}{\hat{\sigma}_u}
+\newcommand*{\bfempriorcovariance}{\opS}
+\newcommand*{\bfemposteriormean}{m_*}
+\newcommand*{\bfemposteriorcovariance}{\opS_*}
+\newcommand*{\bfemprojectionoperator}{\projectionoperator_{\bfempriorcovariance}}
+\newcommand*{\bfemprojectionmatrix}{\mP}
+\newcommand*{\bfempriormeanvector}{\vmu}
+\newcommand*{\bfempriorcovariancematrix}{\mSigma}
+\newcommand*{\bfempriorcovariancematrixrhs}{\mSigma_\mathrm{f}}
+\newcommand*{\bfemposteriormeanvector}{\vmu_*}
+\newcommand*{\bfemposteriormeanvectorrhs}{\vmu_{*\mathrm{f}}}
+\newcommand*{\bfemposteriorcovariancematrix}{\mSigma_*}
+\newcommand*{\bfemposteriorcovariancematrixrhs}{\mSigma_{*\mathrm{f}}}
+
+\newcommand*{\bfemreferencepriorcovariance}{\reference{\opS}}
+\newcommand*{\bfemreferenceposteriormean}{\reference{m}_*}
+\newcommand*{\bfemreferenceposteriorcovariance}{\reference{\opS}_*}
+\newcommand*{\bfempriormeanvectorrhsbcs}{\tilde{\bfempriormeanvector}_\mathrm{f}}
+\newcommand*{\bfempriorcovariancematrixrhsbcs}{\tilde{\bfempriormeanvector}_\mathrm{f}}
+\newcommand*{\projectedsolution}{\reference{\solutionsymbol}}
+\newcommand*{\bfemprojectedpriorcovariance}{\reference{\opS}}
+\newcommand*{\bfemprojectedposteriormean}{\reference{m}_*}
+\newcommand*{\bfemprojectedposteriorcovariance}{\reference{\opS}_*}
+
+% BFEM rescaling stuff
+\newcommand*{\eigenvaluematrix}{\mLambda}
+\newcommand*{\eigenvectormatrix}{\mQ}
+\newcommand*{\projectedsourcevector}{\hat{\sourcevector}}
+\newcommand*{\bfemposteriorstdvector}{\vsigma_*}
+\newcommand*{\bfemrescaledposteriorstdvector}{\hat{vsigma}_*}
+\newcommand*{\referencesourcevectoreigenbasis}{\hat{\referencesourcevector}}
+\newcommand*{\errorvectoreigenbasis}{\hat{\errorvector}}
+\newcommand*{\errormatrix}{\mE}
+
+% BFEM sampling stuff
+\newcommand*{\bfemposteriorsamplemeanvector}{\tilde{\vmu}_*}
+\newcommand*{\bfemposteriorsamplecovariancematrix}{\tilde{\mSigma}_*}
+\newcommand*{\bfemsamplematrix}{\mX}
+\newcommand*{\bfemsampleresidualmatrix}{\mF}
+\newcommand*{\bfemreferencesolutionpriorsample}{\tilde{\referencesolutionvector}}
+\newcommand*{\bfemreferencesourcepriorsample}{\tilde{\referencesourcevector}}
+\newcommand*{\bfemreferencesolutionposteriorsample}{\tilde{\referencesolutionvector}_*}
+\newcommand*{\bfemreferencesourceposteriorsample}{\tilde{\referencesourcevector}_*}
+\newcommand*{\bfemkalmangainmatrix}{\mG}
+\newcommand*{\bfemkalmangainmatrixrhs}{\mG_\mathrm{f}}
+\newcommand*{\bfemobservationnoise}{\ve}
+\newcommand*{\bfemobservationnoisesample}{\tilde{ve}}
+
+% RM-FEM stuff
+\newcommand*{\likelihoodu}{\probabilityof[\solution\ofx]{\observations}}
+\newcommand*{\posteriorkappa}{\probabilityof[\observations]{\diffusion\ofx}}
+\newcommand*{\perturbed}[1]{\tilde{#1}}
+\newcommand*{\nodelocation}{\vx}
+\newcommand*{\rmfemscale}{p}
+\newcommand*{\perturbation}{\valpha}
+\newcommand*{\perturbations}{\valpha}
+\newcommand*{\perturbedmesh}{\fem{\perturbed{\meshsymbol}}}
+\newcommand*{\perturbedsolution}{\perturbed{\solutionsymbol}}
+\newcommand*{\perturbedfemsolution}{\fem{\perturbed{\solutionsymbol}}}
+\newcommand*{\perturbedlocation}{\perturbed{\observationlocations}}
+\newcommand*{\perturbedlocations}{\perturbed{\observationlocations}}
+\newcommand*{\perturbedfemenergy}{\fem{\perturbed{\energy}}}
+
+% StatFEM stuff
+\newcommand*{\misspecificationsymbol}{d}
+\newcommand*{\misspecification}{\fmtvector{\misspecificationsymbol}}
+\newcommand*{\misspecificationkernel}{k_\misspecificationsymbol}
+\newcommand*{\misspecificationlength}{\ell_\misspecificationsymbol}
+\newcommand*{\misspecificationscale}{\sigma_\misspecificationsymbol}
+\newcommand*{\statfemscale}{\rho}
+
+% Test case stuff
+\newcommand*{\youngsmodulus}{E}
+\newcommand*{\crosssection}{A}
+\newcommand*{\barstiffness}{E\mspace{-2mu}A}
+\newcommand*{\springstiffness}{k}
+\newcommand*{\pulloutforce}{F}
+\newcommand*{\wavenumber}{\nu}
+\newcommand*{\poissonsratio}{\nu}
+
+\newcommand*{\beamheight}{H}
+\newcommand*{\beamlength}{L}
+\newcommand*{\beamoverhang}{c}
+\newcommand*{\holelocx}{x}
+\newcommand*{\holelocy}{y}
+\newcommand*{\holesize}{d}
+\newcommand*{\holeangle}{\alpha}
+\newcommand*{\holeradius}{r}
+\newcommand*{\observationspacing}{h_\text{m}}
+\newcommand*{\prescribeddisplacement}{w}
+
+% Unused
+% \newcommand*{\obsmeshsize}{\meshsize_\text{o}}
+% \newcommand*{\refmeshsize}{\meshsize_\text{r}}
+% \newcommand*{\covariancefunction}{k}
+% \newcommand*{\fittedsolutionvector}{\hat{\fmtvector{\solutionsymbol}}}
+% \newcommand*{\boundaryoperator}{\opB}
+% \newcommand*{\observationtrialspace}{\fem{\trialspace}}
+% \newcommand*{\femtrialspace}{\fem{\trialspace}}
+% \newcommand*{\crediblelevel}{\gamma}
+
+%%%%%%%%%%%%%%%%%%%%
+% OLD STUFF BELOW! %
+%%%%%%%%%%%%%%%%%%%%
+
+% Subscripts
+\newcommand{\subd}[1]{\ifblank{#1}{\mathbf{d}}{#1_\mathbf{d}}}
+\newcommand{\subi}[1]{\ifblank{#1}{\mathbf{i}}{#1_\mathbf{i}}}
+\newcommand{\subn}[1]{#1_\mathbf{n}}
+\newcommand{\subii}[1]{\ifblank{#1}{\mathbf{ii}}{#1_\mathbf{ii}}}
+\newcommand{\subid}[1]{#1_\mathbf{id}}
+\newcommand{\subdi}[1]{#1_\mathbf{di}}
+\newcommand{\subdd}[1]{#1_\mathbf{dd}}

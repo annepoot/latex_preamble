@@ -1,7 +1,6 @@
 
 Significant conflicts:
 \mX -> observation locations, sample matrix
-\nu -> wave number, poisson's ratio
 \opG -> Green's function, observation operator
 
 Acceptable conflicts:
@@ -107,6 +106,7 @@ L -> beam length, loss function, L-space
 
 % Greek lowercase
 \newcommand*{\holeangle}{\alpha}
+\newcommand*{\wavenumber}{\beta}
 \newcommand*{\nodalerrorrel}{\zeta}
 \newcommand*{\intererrorrel}{\eta}
 \newcommand*{\hyperparameter}{\eta}
@@ -115,7 +115,6 @@ L -> beam length, loss function, L-space
 \newcommand*{\diffusion}{\kappa}
 \newcommand*{\eigenvalue}{\lambda}
 \newcommand*{\lagrangemultiplier}{\mu}
-\newcommand*{\wavenumber}{\nu}
 \newcommand*{\poissonsratio}{\nu}
 \newcommand*{\statfemscale}{\rho}
 \newcommand*{\noisescale}{\sigma_e}
@@ -198,5 +197,3 @@ L -> beam length, loss function, L-space
 \newcommand{\subid}[1]{#1_\mathbf{id}}
 \newcommand{\subdi}[1]{#1_\mathbf{di}}
 \newcommand{\subdd}[1]{#1_\mathbf{dd}}
-
-

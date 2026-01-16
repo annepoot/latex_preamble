@@ -1,7 +1,6 @@
 
 Significant conflicts:
 \mX -> observation locations, sample matrix
-\alpha -> hole angle, significance level
 \nu -> wave number, poisson's ratio
 \phi -> eigenfunction, test function
 \opG -> Green's function, observation operator
@@ -26,7 +25,6 @@ L -> beam length, loss function, L-space
 
 \valpha -> perturbation, perturbations
 \vsigma -> stress field, std vector
-
 
 % Latin lowercase
 \newcommand*{\beamoverhang}{c}
@@ -110,7 +108,6 @@ L -> beam length, loss function, L-space
 
 % Greek lowercase
 \newcommand*{\holeangle}{\alpha}
-\newcommand*{\significancelevel}{\alpha}
 \newcommand*{\nodalerrorrel}{\zeta}
 \newcommand*{\intererrorrel}{\eta}
 \newcommand*{\hyperparameter}{\eta}

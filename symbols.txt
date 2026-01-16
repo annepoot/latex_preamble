@@ -155,7 +155,7 @@ L -> beam length, loss function, L-space
 
 % Mathcal lowercase
 \newcommand*{\crossstiffnessoperation}{\mathcal{h}}
-\newcommand*{\informationoperation}{\mathcal{i}}
+\newcommand*{\informationoperation}{\mathcal{j}}
 
 % Mathcal uppercase
 \newcommand*{\bilinearoperator}{\opA}
@@ -163,7 +163,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\greensfunction}{\opG}
 \newcommand*{\crossstiffnessoperator}{\opH}
 \newcommand*{\identityoperator}{\opI}
-\newcommand*{\informationoperator}{\opI}
+\newcommand*{\informationoperator}{\opJ}
 \newcommand*{\weakformoperator}{\opL}
 \newcommand*{\projectionoperator}{\opP}
 \newcommand*{\observationoperator}{\opP}

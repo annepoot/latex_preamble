@@ -27,7 +27,7 @@ L -> beam length, loss function, L-space
 \vsigma -> stress field, std vector
 
 \opI -> identity operator, information operator
-\opP -> projection operator, observation operator
+\opG -> Green's function, observation operator
 
 % Latin lowercase
 \newcommand*{\beamoverhang}{c}
@@ -161,12 +161,12 @@ L -> beam length, loss function, L-space
 \newcommand*{\bilinearoperator}{\opA}
 \newcommand*{\differentialoperator}{\opD}
 \newcommand*{\greensfunction}{\opG}
+\newcommand*{\observationoperator}{\opG}
 \newcommand*{\crossstiffnessoperator}{\opH}
 \newcommand*{\identityoperator}{\opI}
 \newcommand*{\informationoperator}{\opJ}
 \newcommand*{\weakformoperator}{\opL}
 \newcommand*{\projectionoperator}{\opP}
-\newcommand*{\observationoperator}{\opP}
 \newcommand*{\bfempriorcovariance}{\opS}
 \newcommand*{\meshsymbol}{\mathcal{T}}
 \newcommand*{\solutionspace}{\opV}

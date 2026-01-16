@@ -129,15 +129,16 @@
 \newcommand*{\truesolution}{\true{\solution}}
 \newcommand*{\trueparameters}{\true{\parameters}}
 \newcommand*{\trueenergy}{\true{\energy}}
-\newcommand*{\fielderror}{e\ofx}
-\newcommand*{\nodalerror}{\ve}
-\newcommand*{\fielderrornorm}{\|e\ofx\|}
-\newcommand*{\nodalerrornorm}{\|\ve\|}
-\newcommand*{\nodalerrorrel}{\zeta}
-\newcommand*{\intererrorrel}{\eta}
+
 \newcommand*{\errorsymbol}{e}
 \newcommand*{\error}{\fem{\errorsymbol}}
+\newcommand*{\fielderror}{\error\of[x]}
+\newcommand*{\fielderrornorm}{\norm{\fielderror}}
 \newcommand*{\errorvector}{\ve}
+\newcommand*{\nodalerror}{\fem{\fmtvector{\errorsymbol}}}
+\newcommand*{\nodalerrornorm}{\norm{\nodalerror}}
+\newcommand*{\nodalerrorrel}{\zeta}
+\newcommand*{\intererrorrel}{\eta}
 
 % Reference mesh stuff
 \newcommand*{\reference}[1]{\tilde{#1}}

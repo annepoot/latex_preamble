@@ -7,7 +7,7 @@ w -> arbitrary function, prescribed displacement
 x -> x, hole location
 y -> hole location, observation
 
-\ve -> bfemobservation noise, noise, error vector, nodal error
+\ve -> bfemobservation noise, noise
 \vf -> source field, source vector
 \vu -> displacement field, solution vector
 

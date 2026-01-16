@@ -128,7 +128,6 @@
 \newcommand*{\error}{\fem{\errorsymbol}}
 \newcommand*{\fielderror}{\error\of[x]}
 \newcommand*{\fielderrornorm}{\norm{\fielderror}}
-\newcommand*{\errorvector}{\ve}
 \newcommand*{\nodalerror}{\fem{\fmtvector{\errorsymbol}}}
 \newcommand*{\nodalerrornorm}{\norm{\nodalerror}}
 \newcommand*{\nodalerrorrel}{\zeta}
@@ -233,6 +232,8 @@
 \newcommand*{\bfemprojectedposteriorcovariance}{\reference{\opS}_*}
 
 % BFEM rescaling stuff
+\newcommand*{\errorvector}{\reference{\ve}}
+\newcommand*{\referencesolution}{\reference{\solutionvector}}
 \newcommand*{\eigenvaluematrix}{\mLambda}
 \newcommand*{\eigenvectormatrix}{\mQ}
 \newcommand*{\projectedsourcevector}{\hat{\sourcevector}}

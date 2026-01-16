@@ -2,7 +2,6 @@
 Significant conflicts:
 \mX -> observation locations, sample matrix
 \nu -> wave number, poisson's ratio
-\phi -> eigenfunction, test function
 \opG -> Green's function, observation operator
 
 Acceptable conflicts:
@@ -124,7 +123,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\misspecificationscale}{\sigma_\misspecificationsymbol}
 \newcommand*{\tempering}{\tau}
 \newcommand*{\eigenfunction}{\phi}
-\newcommand*{\testfunctionsymbol}{\phi}
+\newcommand*{\testfunctionsymbol}{\varphi}
 \newcommand*{\trialfunctionsymbol}{\psi}
 
 % Greek lowercase (bold)
@@ -136,7 +135,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\bfempriormeanvector}{\vmu}
 \newcommand*{\stressfield}{\vsigma}
 \newcommand*{\bfemposteriorstdvector}{\vsigma_*}
-\newcommand*{\testvector}{\vphi}
+\newcommand*{\testvector}{\vvarphi}
 \newcommand*{\trialvector}{\vpsi}
 
 % Greek uppercase

@@ -157,12 +157,18 @@
 \newcommand*{\interpolationmatrix}{\mPhi}
 
 % Hypermesh stuff
-\newcommand*{\hyper}[1]{\hat{#1}}
+\newcommand*{\hyper}[1]{\smash{hat{#1}}}
+\newcommand*{\hypermeshsize}{\hyper{\meshsize}}
+\newcommand*{\hyperfem}[1]{#1^\mathrm{\hypermeshsize}}
+\newcommand*{\hyperhyperfem}[1]{\hyperfem{\hyper{#1}}}
+
 \newcommand*{\hyperstiffnessmatrix}{\hyper{\mK}}
 \newcommand*{\hyperobservationinterpolationmatrix}{\hyper{\mPhi}}
-\newcommand*{\hyperreferenceinterpolationmatrix}{\hyper{\reference{\mPhi}}}
 \newcommand*{\hypersolutionspace}{\fem{\hyper{\solutionspace}}}
 \newcommand*{\hypermesh}{\fem{\hyper{\meshsymbol}}}
+
+\newcommand*{\hyperreference}[1]{\smash{\hat{\tilde{#1}}}}
+\newcommand*{\hyperreferenceinterpolationmatrix}{\hyperreference{\mPhi}}
 
 % GP regression stuff
 \newcommand*{\meanfunction}{m}

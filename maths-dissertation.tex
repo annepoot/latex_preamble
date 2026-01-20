@@ -244,14 +244,14 @@
 \newcommand*{\errormatrix}{\mE}
 
 % BFEM sampling stuff
-\newcommand*{\bfemposteriorsamplemeanvector}{\tilde{\vmu}_*}
-\newcommand*{\bfemposteriorsamplecovariancematrix}{\tilde{\mSigma}_*}
 \newcommand*{\bfemsamplematrix}{\mU}
+\newcommand*{\bfemposteriorsamplemeanvector}{\hat{\vmu}_*}
+\newcommand*{\bfemposteriorsamplecovariancematrix}{\hat{\mSigma}_*}
 \newcommand*{\bfemsampleresidualmatrix}{\mF}
-\newcommand*{\bfemreferencesolutionpriorsample}{\tilde{\referencesolutionvector}}
-\newcommand*{\bfemreferencesourcepriorsample}{\tilde{\referencesourcevector}}
-\newcommand*{\bfemreferencesolutionposteriorsample}{\tilde{\referencesolutionvector}_*}
-\newcommand*{\bfemreferencesourceposteriorsample}{\tilde{\referencesourcevector}_*}
+\newcommand*{\bfemreferencesolutionpriorsample}[1]{\referencesolutionvector^{(#1)}}
+\newcommand*{\bfemreferencesourcepriorsample}[1]{\referencesourcevector^{(#1)}}
+\newcommand*{\bfemreferencesolutionposteriorsample}[1]{\referencesolutionvector_*^{(#1)}}
+\newcommand*{\bfemreferencesourceposteriorsample}[1]{\referencesourcevector_*^{(#1)}}
 \newcommand*{\bfemkalmangainmatrix}{\mG}
 \newcommand*{\bfemkalmangainmatrixrhs}{\mG_\mathrm{f}}
 \newcommand*{\bfemobservationnoise}{\ve}

@@ -1,6 +1,5 @@
 
 Significant conflicts:
-\mX -> observation locations, sample matrix
 \opG -> Green's function, observation operator
 
 Acceptable conflicts:
@@ -101,8 +100,8 @@ L -> beam length, loss function, L-space
 \newcommand*{\crossmassmatrix}{\mM_\text{x}}
 \newcommand*{\bfemprojectionmatrix}{\mP}
 \newcommand*{\eigenvectormatrix}{\mQ}
+\newcommand*{\bfemsamplematrix}{\mU}
 \newcommand*{\observationlocations}{\mX}
-\newcommand*{\bfemsamplematrix}{\mX}
 
 % Greek lowercase
 \newcommand*{\holeangle}{\alpha}

@@ -1,6 +1,5 @@
 
 Significant conflicts:
-\opG -> Green's function, observation operator
 
 Acceptable conflicts:
 d -> dimensionality, hole size, misspecification
@@ -22,6 +21,12 @@ L -> beam length, loss function, L-space
 
 \valpha -> perturbation, perturbations
 \vsigma -> stress field, std vector
+
+\opG -> Green's function, observation operator
+
+\hat\tilde -> Phi hyper to reference, rescaled variable on reference mesh
+\tilde -> reference variable, perturbed variable
+\^\mathrm{\referencemeshsize} -> reference FEM indicator (superscript quite tall)
 
 % Latin lowercase
 \newcommand*{\beamoverhang}{c}
@@ -186,7 +191,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\projectedsourcevector}{\hat{\sourcevector}}
 \newcommand*{\bfemrescaledposteriorstdvector}{\hat{vsigma}_*}
 \newcommand*{\referencesourcevectoreigenbasis}{\hat{\referencesourcevector}}
-\newcommand*{\bfemreferencesolutionpriorsample}{\tilde{\referencesolutionvector}}
+\newcommand*{\bfemreferencesolutionpriorsample}[1]{\referencesolutionvector^{(#1)}}
 \newcommand*{\perturbed}[1]{\tilde{#1}}
 \newcommand*{\perturbedmesh}{\fem{\perturbed{\meshsymbol}}}
 \newcommand{\subd}[1]{\ifblank{#1}{\mathbf{d}}{#1_\mathbf{d}}}

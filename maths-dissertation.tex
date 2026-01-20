@@ -95,7 +95,7 @@
 \newcommand*{\testfunctioncount}{n}
 \newcommand*{\trialfunctioncount}{m}
 
-\newcommand*{\fem}[1]{#1^\mathrm{\meshsize}}
+\newcommand*{\fem}[1]{#1^{\meshsize}}
 \newcommand*{\femsolution}{\fem{\solution}}
 \newcommand*{\femsolutionspace}{\fem{\solutionspace}}
 \newcommand*{\femhomsolutionspace}{\fem{\solutionspace}_0}
@@ -118,7 +118,7 @@
 \newcommand*{\femadjointsolution}{\fem{\adjointsolution}}
 
 % Truth and error
-\newcommand*{\true}[1]{{#1}^\star}
+\newcommand*{\true}[1]{{#1}^{\star}}
 \newcommand*{\exact}[1]{\true{#1}}
 \newcommand*{\truesolution}{\true{\solution}}
 \newcommand*{\trueparameters}{\true{\parameters}}
@@ -136,7 +136,7 @@
 % Reference mesh stuff
 \newcommand*{\reference}[1]{\smash{\tilde{#1}}}
 \newcommand*{\referencemeshsize}{\reference{\meshsize}}
-\newcommand*{\referencefem}[1]{#1^\mathrm{\referencemeshsize}}
+\newcommand*{\referencefem}[1]{#1^{\referencemeshsize}}
 \newcommand*{\referencereferencefem}[1]{\referencefem{\reference{#1}}}
 
 \newcommand*{\referencestiffnessmatrix}{\reference{\mK}}
@@ -157,15 +157,15 @@
 \newcommand*{\interpolationmatrix}{\mPhi}
 
 % Hypermesh stuff
-\newcommand*{\hyper}[1]{\smash{hat{#1}}}
+\newcommand*{\hyper}[1]{\smash{\hat{#1}}}
 \newcommand*{\hypermeshsize}{\hyper{\meshsize}}
-\newcommand*{\hyperfem}[1]{#1^\mathrm{\hypermeshsize}}
+\newcommand*{\hyperfem}[1]{#1^{\hypermeshsize}}
 \newcommand*{\hyperhyperfem}[1]{\hyperfem{\hyper{#1}}}
 
 \newcommand*{\hyperstiffnessmatrix}{\hyper{\mK}}
 \newcommand*{\hyperobservationinterpolationmatrix}{\hyper{\mPhi}}
-\newcommand*{\hypersolutionspace}{\fem{\hyper{\solutionspace}}}
-\newcommand*{\hypermesh}{\fem{\hyper{\meshsymbol}}}
+\newcommand*{\hypersolutionspace}{\hyperhyperfem{\solutionspace}}
+\newcommand*{\hypermesh}{\hyperhyperfem{\meshsymbol}}
 
 \newcommand*{\hyperreference}[1]{\smash{\hat{\tilde{#1}}}}
 \newcommand*{\hyperreferenceinterpolationmatrix}{\hyperreference{\mPhi}}

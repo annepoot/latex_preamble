@@ -1,0 +1,203 @@
+
+Significant conflicts:
+
+Acceptable conflicts:
+d -> dimensionality, hole size, misspecification
+m -> mean function, trial function count
+w -> arbitrary function, prescribed displacement
+x -> x, hole location
+y -> hole location, observation
+
+\ve -> bfemobservation noise, noise
+\vf -> source field, source vector
+\vu -> displacement field, solution vector
+
+J -> energy, quantity of interest
+H -> beam height, Hilbert space
+L -> beam length, loss function, L-space
+
+\eta -> relative interpolation error, hyperparameter
+\theta -> parameter, log diffusion
+
+\valpha -> perturbation, perturbations
+\vsigma -> stress field, std vector
+
+\opG -> Green's function, observation operator
+
+\hat\tilde -> Phi hyper to reference, rescaled variable on reference mesh
+\tilde -> reference variable, perturbed variable
+\^\mathrm{\referencemeshsize} -> reference FEM indicator (superscript quite tall)
+
+% Latin lowercase
+\newcommand*{\beamoverhang}{c}
+\newcommand*{\dimensionality}{d}
+\newcommand*{\holesize}{d}
+\newcommand*{\misspecificationsymbol}{d}
+\newcommand*{\errorsymbol}{e}
+\newcommand*{\error}{\fem{\errorsymbol}}
+\newcommand*{\fielderror}{e\ofx}
+\newcommand*{\sourcesymbol}{f}
+\newcommand*{\adjointsource}{g}
+\newcommand*{\meshsize}{h}
+\newcommand*{\observationspacing}{h_\text{m}}
+\newcommand*{\springstiffness}{k}
+\newcommand*{\kernelfunction}{k}
+\newcommand*{\misspecificationkernel}{k_\misspecificationsymbol}
+\newcommand*{\linearfunctional}{\ell}
+\newcommand*{\misspecificationlength}{\ell_\misspecificationsymbol}
+\newcommand*{\meanfunction}{m}
+\newcommand*{\trialfunctioncount}{m}
+\newcommand*{\testfunctioncount}{n}
+\newcommand*{\numberof}{n_#1}
+\newcommand*{\rmfemscale}{p}
+\newcommand*{\holeradius}{r}
+\newcommand*{\solutionsymbol}{u}
+\newcommand*{\arbitraryfunctionv}{v}
+\newcommand*{\arbitraryfunctionw}{w}
+\newcommand*{\prescribeddisplacement}{w}
+\newcommand*{\holelocx}{x}
+\newcommand*{\observation}{y}
+\newcommand*{\holelocy}{y}
+
+% Latin lowercase (bold)
+\newcommand*{\misspecification}{\fmtvector{\misspecificationsymbol}}
+\newcommand*{\bfemobservationnoise}{\ve}
+\newcommand*{\noise}{\ve}
+\newcommand*{\errorvector}{\ve}
+\newcommand*{\nodalerror}{\ve}
+\newcommand*{\sourcefield}{\vf}
+\newcommand*{\sourcevector}{\fmtvector{\sourcesymbol}}
+\newcommand*{\normalfield}{\vn}
+\newcommand*{\tractionfield}{\vt}
+\newcommand*{\displacementfield}{\vu}
+\newcommand*{\solutionvector}{\fmtvector{\solutionsymbol}}
+\newcommand*{\arbitraryvectorv}{\vv}
+\newcommand*{\arbitraryvectorw}{\vw}
+\newcommand*{\nodelocation}{\vx}
+\newcommand*{\observations}{\vy}
+
+% Latin uppercase
+\newcommand*{\crosssection}{A}
+\newcommand*{\elasticitytensor}{C}
+\newcommand*{\youngsmodulus}{E}
+\newcommand*{\energy}{E}
+\newcommand*{\barstiffness}{E\mspace{-2mu}A}
+\newcommand*{\pulloutforce}{F}
+\newcommand*{\quantityofinterest}{J}
+\newcommand*{\beamheight}{H}
+\NewDocumentCommand{\Hspace}{s m}{\IfBooleanTF{#1}{H^{#2}_0}{H^{#2}}}
+\newcommand*{\beamlength}{L}
+\NewDocumentCommand{\Lspace}{O{2}}{L^{#1}}
+\newcommand*{\lossfunction}{L}
+\newcommand*{\pseudomarginalsamplecount}{M}
+\newcommand*{\samplecount}{N}
+\NewDocumentCommand{\Wspace}{m m}{W^{#1,#2}}
+\newcommand*{\observationlocation}{X}
+
+% Latin uppercase (bold)
+\newcommand*{\errormatrix}{\mE}
+\newcommand*{\bfemsampleresidualmatrix}{\mF}
+\newcommand*{\bfemkalmangainmatrix}{\mG}
+\newcommand*{\identitymatrix}{\mI}
+\newcommand*{\crossstiffnessmatrix}{\mH}
+\newcommand*{\stiffnessmatrix}{\mK}
+\newcommand*{\massmatrix}{\mM}
+\newcommand*{\crossmassmatrix}{\mM_\text{x}}
+\newcommand*{\bfemprojectionmatrix}{\mP}
+\newcommand*{\eigenvectormatrix}{\mQ}
+\newcommand*{\bfemsamplematrix}{\mU}
+\newcommand*{\observationlocations}{\mX}
+
+% Greek lowercase
+\newcommand*{\holeangle}{\alpha}
+\newcommand*{\wavenumber}{\beta}
+\newcommand*{\nodalerrorrel}{\zeta}
+\newcommand*{\intererrorrel}{\eta}
+\newcommand*{\hyperparameter}{\eta}
+\newcommand*{\parameter}{\theta}
+\newcommand*{\logdiffusion}{\theta}
+\newcommand*{\diffusion}{\kappa}
+\newcommand*{\eigenvalue}{\lambda}
+\newcommand*{\lagrangemultiplier}{\mu}
+\newcommand*{\poissonsratio}{\nu}
+\newcommand*{\statfemscale}{\rho}
+\newcommand*{\noisescale}{\sigma_e}
+\newcommand*{\bfemscale}{\sigma_u}
+\newcommand*{\misspecificationscale}{\sigma_\misspecificationsymbol}
+\newcommand*{\tempering}{\tau}
+\newcommand*{\eigenfunction}{\phi}
+\newcommand*{\testfunctionsymbol}{\varphi}
+\newcommand*{\trialfunctionsymbol}{\psi}
+
+% Greek lowercase (bold)
+\newcommand*{\perturbation}{\valpha}
+\newcommand*{\perturbations}{\valpha}
+\newcommand*{\strainfield}{\vvarepsilon}
+\newcommand*{\hyperparameters}{\veta}
+\newcommand*{\parameters}{\vtheta}
+\newcommand*{\bfempriormeanvector}{\vmu}
+\newcommand*{\stressfield}{\vsigma}
+\newcommand*{\bfemposteriorstdvector}{\vsigma_*}
+\newcommand*{\testvector}{\vvarphi}
+\newcommand*{\trialvector}{\vpsi}
+
+% Greek uppercase
+\newcommand*{\dirichletboundary}{\Gamma_\text{D}}
+\newcommand*{\neumannboundary}{\Gamma_\text{N}}
+\newcommand*{\bfempriorcovariancematrix}{\mSigma}
+\newcommand*{\domain}{\Omega}
+
+% Greek uppercase (bold)
+\newcommand*{\interpolationmatrix}{\mPhi}
+\newcommand*{\eigenvaluematrix}{\mLambda}
+
+% Mathcal lowercase
+\newcommand*{\crossstiffnessoperation}{\mathcal{h}}
+\newcommand*{\informationoperation}{\mathcal{j}}
+
+% Mathcal uppercase
+\newcommand*{\bilinearoperator}{\opA}
+\newcommand*{\differentialoperator}{\opD}
+\newcommand*{\greensfunction}{\opG}
+\newcommand*{\observationoperator}{\opG}
+\newcommand*{\crossstiffnessoperator}{\opH}
+\newcommand*{\identityoperator}{\opI}
+\newcommand*{\informationoperator}{\opJ}
+\newcommand*{\weakformoperator}{\opL}
+\newcommand*{\projectionoperator}{\opP}
+\newcommand*{\bfempriorcovariance}{\opS}
+\newcommand*{\meshsymbol}{\mathcal{T}}
+\newcommand*{\solutionspace}{\opV}
+
+% Symbols
+\newcommand*{\inhomdisplacementfield}{\hat{\vu}}
+\newcommand*{\dirichletfield}{\bar{\displacementfield}}
+\newcommand*{\neumannfield}{\bar{\tractionfield}}
+\newcommand*{\fem}[1]{{#1}^\mathrm{\meshsize}}
+\newcommand*{\perpprojectionoperator}{\projectionoperator_\perp}
+\newcommand*{\true}[1]{{#1}^\star}
+\newcommand*{\reference}[1]{\tilde{#1}}
+\newcommand*{\referenceperpprojectionoperator}{\reference{\projectionoperator}_\perp}
+\newcommand*{\referencefem}[1]{{#1}^\mathrm{\referencemeshsize}}
+\newcommand*{\referenceerror}{\fem{\reference{\errorsymbol}}}
+\newcommand*{\hyper}[1]{\hat{#1}}
+\newcommand*{\hypersolutionspace}{\fem{\hyper{\solutionspace}}}
+\newcommand*{\hyperreferenceinterpolationmatrix}{\hyper{\reference{\mPhi}}}
+\newcommand*{\parametrizeddifferentialoperator}{\differentialoperator_\parameters}
+\newcommand*{\argmaxbfemscale}{\hat{\sigma}_u}
+\newcommand*{\bfemposteriormean}{m_*}
+\newcommand*{\bfempriormeanvectorrhsbcs}{\tilde{\bfempriormeanvector}_\mathrm{f}}
+\newcommand*{\bfemposteriorsamplemeanvector}{\tilde{\vmu}_*}
+\newcommand*{\projectedsourcevector}{\hat{\sourcevector}}
+\newcommand*{\bfemrescaledposteriorstdvector}{\hat{vsigma}_*}
+\newcommand*{\referencesourcevectoreigenbasis}{\hat{\referencesourcevector}}
+\newcommand*{\bfemreferencesolutionpriorsample}[1]{\referencesolutionvector^{(#1)}}
+\newcommand*{\perturbed}[1]{\tilde{#1}}
+\newcommand*{\perturbedmesh}{\fem{\perturbed{\meshsymbol}}}
+\newcommand{\subd}[1]{\ifblank{#1}{\mathbf{d}}{#1_\mathbf{d}}}
+\newcommand{\subi}[1]{\ifblank{#1}{\mathbf{i}}{#1_\mathbf{i}}}
+\newcommand{\subn}[1]{#1_\mathbf{n}}
+\newcommand{\subii}[1]{\ifblank{#1}{\mathbf{ii}}{#1_\mathbf{ii}}}
+\newcommand{\subid}[1]{#1_\mathbf{id}}
+\newcommand{\subdi}[1]{#1_\mathbf{di}}
+\newcommand{\subdd}[1]{#1_\mathbf{dd}}

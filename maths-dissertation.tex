@@ -244,18 +244,18 @@
 \newcommand*{\errormatrix}{\mE}
 
 % BFEM sampling stuff
-\newcommand*{\bfemsamplematrix}{\mU}
-\newcommand*{\bfemposteriorsamplemeanvector}{\hat{\vmu}_*}
-\newcommand*{\bfemposteriorsamplecovariancematrix}{\hat{\mSigma}_*}
-\newcommand*{\bfemsampleresidualmatrix}{\mF}
 \newcommand*{\bfemreferencesolutionpriorsample}[1]{\referencesolutionvector^{(#1)}}
 \newcommand*{\bfemreferencesourcepriorsample}[1]{\referencesourcevector^{(#1)}}
 \newcommand*{\bfemreferencesolutionposteriorsample}[1]{\referencesolutionvector_*^{(#1)}}
 \newcommand*{\bfemreferencesourceposteriorsample}[1]{\referencesourcevector_*^{(#1)}}
+\newcommand*{\bfemreferencesolutionpriorsamplematrix}{\mU}
+\newcommand*{\bfemposteriorsamplemeanvector}{\hat{\bfempriormeanvector}_*}
+\newcommand*{\bfemposteriorsamplecovariancematrix}{\hat{\bfempriorcovariancematrix}_*}
+\newcommand*{\bfemsampleresidualmatrix}{\mF}
 \newcommand*{\bfemkalmangainmatrix}{\mG}
 \newcommand*{\bfemkalmangainmatrixrhs}{\mG_\mathrm{f}}
 \newcommand*{\bfemobservationnoise}{\ve}
-\newcommand*{\bfemobservationnoisesample}{\tilde{ve}}
+\newcommand*{\bfemobservationnoisesample}[1]{\bfemobservationnoise^{(#1)}}
 
 % RM-FEM stuff
 \newcommand*{\likelihoodu}{\probabilityof[\solution\ofx]{\observations}}

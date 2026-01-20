@@ -95,7 +95,7 @@
 \newcommand*{\testfunctioncount}{n}
 \newcommand*{\trialfunctioncount}{m}
 
-\newcommand*{\fem}[1]{{#1}^\mathrm{\meshsize}}
+\newcommand*{\fem}[1]{#1^\mathrm{\meshsize}}
 \newcommand*{\femsolution}{\fem{\solution}}
 \newcommand*{\femsolutionspace}{\fem{\solutionspace}}
 \newcommand*{\femhomsolutionspace}{\fem{\solutionspace}_0}
@@ -134,22 +134,22 @@
 \newcommand*{\intererrorrel}{\eta}
 
 % Reference mesh stuff
-\newcommand*{\reference}[1]{\tilde{#1}}
+\newcommand*{\reference}[1]{\smash{\tilde{#1}}}
+\newcommand*{\referencemeshsize}{\reference{\meshsize}}
+\newcommand*{\referencefem}[1]{#1^\mathrm{\referencemeshsize}}
+\newcommand*{\referencereferencefem}[1]{\referencefem{\reference{#1}}}
+
 \newcommand*{\referencestiffnessmatrix}{\reference{\mK}}
 \newcommand*{\referencemassmatrix}{\reference{\mM}}
 \newcommand*{\referencesolutionvector}{\reference{\solutionvector}}
 \newcommand*{\referencesourcevector}{\reference{\sourcevector}}
-\newcommand*{\referencesolutionspace}{\fem{\reference{\solutionspace}}}
-\newcommand*{\referencetestspace}{\fem{\reference{\solutionspace}}_0}
-\newcommand*{\referencetrialspace}{\fem{\reference{\trialspace}}}
+\newcommand*{\referencesolutionspace}{\referencereferencefem{\solutionspace}}
 \newcommand*{\referenceweakformoperator}{\reference{\weakformoperator}}
 \newcommand*{\referenceprojectionoperator}{\reference{\projectionoperator}}
 \newcommand*{\referenceperpprojectionoperator}{\reference{\projectionoperator}_\perp}
 
-\newcommand*{\referencefem}[1]{{#1}^\mathrm{\referencemeshsize}}
-\newcommand*{\referencemeshsize}{\reference{\meshsize}}
-\newcommand*{\referencemesh}{\fem{\reference{\meshsymbol}}}
-\newcommand*{\referenceerror}{\fem{\reference{\errorsymbol}}}
+\newcommand*{\referencemesh}{\referencereferencefem{\meshsymbol}}
+\newcommand*{\referenceerror}{\referencefem{\errorsymbol}}
 \newcommand*{\referencefemadjointsolution}{\referencefem{\adjointsolution}}
 
 \newcommand*{\crossstiffnessmatrix}{\mH}
@@ -224,8 +224,7 @@
 \newcommand*{\bfemreferenceposteriormean}{\reference{m}_*}
 \newcommand*{\bfemreferenceposteriorcovariance}{\reference{\opS}_*}
 \newcommand*{\bfempriormeanvectorrhsbcs}{\tilde{\bfempriormeanvector}_\mathrm{f}}
-\newcommand*{\bfempriorcovariancematrixrhsbcs}{\tilde{\bfempriormeanvector}_\mathrm{f}}
-\newcommand*{\projectedsolution}{\reference{\solutionsymbol}}
+\newcommand*{\bfempriorcovariancematrixrhsbcs}{\tilde{\bfempriorcovariancematrix}_\mathrm{f}}
 \newcommand*{\bfemprojectedpriorcovariance}{\reference{\opS}}
 \newcommand*{\bfemprojectedposteriormean}{\reference{m}_*}
 \newcommand*{\bfemprojectedposteriorcovariance}{\reference{\opS}_*}

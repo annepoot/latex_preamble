@@ -50,6 +50,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\testfunctioncount}{n}
 \newcommand*{\numberof}{n_#1}
 \newcommand*{\rmfemscale}{p}
+\newcommand*{\fiberdistance}{s}
 \newcommand*{\holeradius}{r}
 \newcommand*{\solutionsymbol}{u}
 \newcommand*{\arbitraryfunctionv}{v}
@@ -111,6 +112,8 @@ L -> beam length, loss function, L-space
 % Greek lowercase
 \newcommand*{\holeangle}{\alpha}
 \newcommand*{\wavenumber}{\beta}
+\newcommand*{\degradation}{\gamma}
+\newcommand*{\degradationfunc}{\delta}
 \newcommand*{\nodalerrorrel}{\zeta}
 \newcommand*{\intererrorrel}{\eta}
 \newcommand*{\hyperparameter}{\eta}
@@ -121,6 +124,7 @@ L -> beam length, loss function, L-space
 \newcommand*{\lagrangemultiplier}{\mu}
 \newcommand*{\poissonsratio}{\nu}
 \newcommand*{\statfemscale}{\rho}
+\newcommand*{\sigmoid}{\sigma}
 \newcommand*{\noisescale}{\sigma_e}
 \newcommand*{\bfemscale}{\sigma_u}
 \newcommand*{\misspecificationscale}{\sigma_\misspecificationsymbol}

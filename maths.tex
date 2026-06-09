@@ -237,35 +237,32 @@
 % Core matrix operators
 \newcommand*{\transposesymbol}{\mathsf{T}}
 \newcommand*{\hermitiansymbol}{\mathsf{H}}
-\newcommand*{\adjointsymbol}{*}
-\newcommand*{\inversesymbol}{-}
-\newcommand*{\pseudoinversesymbol}{+}
 
 \newcommand*{\transpose}[1]{\super{#1}{\transposesymbol}}
 \newcommand*{\conjugate}[1]{{\overline{#1}}}
 \newcommand*{\hermitian}[1]{\super{#1}{\hermitiansymbol}}
-\newcommand*{\adjoint}[1]{\super{#1}{\adjointsymbol}}
-\newcommand*{\inverse}[1]{\super{#1}{\inversesymbol 1}}
-\newcommand*{\pseudoinverse}[1]{\super{#1}{\pseudoinversesymbol}}
-\newcommand*{\squaredinverse}[1]{\super{#1}{\inversesymbol 2}}
+\newcommand*{\banachadjoint}[1]{#1'}
+\newcommand*{\hilbertadjoint}[1]{\super{#1}{*}}
+\newcommand*{\adjoint}[1]{\banachadjoint{#1}}
+\newcommand*{\inverse}[1]{\super{#1}{-1}}
+\newcommand*{\pseudoinverse}[1]{\super{#1}{+}}
+\newcommand*{\squaredinverse}[1]{\super{#1}{-2}}
 
 % Abbreviations
 \providecommand{\T}[1]{\transpose{#1}}
 \providecommand{\H}[1]{\hermitian{#1}}
+\providecommand{\badj}[1]{\banachadjoint{#1}}
+\providecommand{\hadj}[1]{\hilbertadjoint{#1}}
 \providecommand{\adj}[1]{\adjoint{#1}}
 \providecommand{\inv}[1]{\inverse{#1}}
 \providecommand{\pinv}[1]{\pseudoinverse{#1}}
 \providecommand{\sqinv}[1]{\squaredinverse{#1}}
 
 % Combined operators
-\providecommand{\Tinv}[1]{\super{#1}{\inversesymbol\transposesymbol}}
-\providecommand{\adjinv}[1]{\super{#1}{\inversesymbol\adjointsymbol}}
-\providecommand{\Tpinv}[1]{\super{#1}{\pseudoinversesymbol\transposesymbol}}
-\providecommand{\adjpinv}[1]{\super{#1}{\pseudoinversesymbol\adjointsymbol}}
+\providecommand{\Tinv}[1]{\super{#1}{-\transposesymbol}}
+\providecommand{\Tpinv}[1]{\super{#1}{+\transposesymbol}}
 \providecommand{\invT}[1]{\Tinv}
-\providecommand{\invadj}[1]{\adjinv}
 \providecommand{\pinvT}[1]{\Tpseudoinv}
-\providecommand{\pinvadj}[1]{\adjpseudoinv}
 
 %%%%%%%%%%%%%%
 % Delimiters %

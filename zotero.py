@@ -53,7 +53,7 @@ used_field_list = [
 def generate_citation_key(entry, title_len):
     key = ""
 
-    author = entry.get("author", "noauthor")
+    author = entry.get("author", entry.get("editor", "noauthor"))
     first_author = author.split(" and ")[0]
     last_name = first_author.split(", ")[0]
     nfkd = unicodedata.normalize("NFKD", last_name.lower())
